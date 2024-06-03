@@ -4,6 +4,11 @@
 #include <QWidget>
 #include <QLabel>
 #include <QPushButton>
+#include <QVector>
+#include <QGridLayout>
+#include <QMessageBox>
+#include <QMap>
+#include <QString>
 
 class HubWidget : public QWidget {
     Q_OBJECT
@@ -16,28 +21,30 @@ public:
     void showArchivistOptions();
     void showConfirmationButtons();
     void hideConfirmationButtons();
-    void showReturnButton();
-    void hideReturnButton();
-    void hideMainButtons(); // Nowa metoda
-    void showMainButtons(); // Nowa metoda
-    void hideArchivesButton(); // Nowa metoda
+    void setButtonVisibility(const QString &buttonName, bool visible);
+    void addBookButton(const QString &title, int index);
+    void clearBookButtons();
+    void addShopItemButton(const QString &name, int index);
+    void clearShopItemButtons();
+    void showMessageBox(const QString &title, const QString &content);
 
 signals:
-    void captainButtonClicked();
-    void shopkeeperButtonClicked();
-    void archivistButtonClicked();
-    void nextMissionConfirmed();
-    void returnToHub();
-    void showArchives();
+    void buttonClicked(const QString &buttonName);
+    void bookButtonClicked(int index);
+    void shopItemButtonClicked(int index);
 
 private:
     QLabel *messageLabel;
-    QPushButton *captainButton;
-    QPushButton *shopkeeperButton;
-    QPushButton *archivistButton;
-    QPushButton *nextMissionButton;
-    QPushButton *returnButton;
-    QPushButton *showArchivesButton;
+    QMap<QString, QPushButton*> buttons;
+    QVector<QPushButton*> bookButtons;
+    QVector<QPushButton*> shopItemButtons;
+    QVBoxLayout *mainLayout;
+    QGridLayout *bookLayout;
+    QGridLayout *shopItemLayout;
+    QSpacerItem *topSpacer;
+    QSpacerItem *bottomSpacer;
+
+    void createButton(const QString &name, const QString &text);
 };
 
 #endif // HUBWIDGET_H

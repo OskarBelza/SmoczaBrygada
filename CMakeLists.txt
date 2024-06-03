@@ -29,11 +29,14 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         hubwidget.h hubwidget.cpp
         mission.h mission.cpp
         missionwidget.h missionwidget.cpp
-        tools.h tools.cpp
+        tool.h tool.cpp
         tutorialmission.h tutorialmission.cpp
         inventory.h inventory.cpp
         fight.h fight.cpp
         hub.h hub.cpp
+        book.h book.cpp
+        archive.h archive.cpp
+        shop.h shop.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET SmoczaBrygada APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

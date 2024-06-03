@@ -305,5 +305,5 @@ C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/firefighter.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/inventory.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/mission.h \
-  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tools.h \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tool.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tutorialmission.h

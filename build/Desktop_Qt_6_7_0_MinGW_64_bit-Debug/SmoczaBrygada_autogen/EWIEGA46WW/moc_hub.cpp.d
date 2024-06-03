@@ -1,5 +1,6 @@
 C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/EWIEGA46WW/moc_hub.cpp: C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/hub.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/moc_predefs.h \
+  C:/Qt/6.7.0/mingw_64/include/QtCore/QMap \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QObject \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QString \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QVector \
@@ -150,12 +151,21 @@ C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_
   C:/Qt/6.7.0/mingw_64/include/QtGui/qtransform.h \
   C:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.7.0/mingw_64/include/QtWidgets/QGridLayout \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/QLabel \
+  C:/Qt/6.7.0/mingw_64/include/QtWidgets/QMessageBox \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/QWidget \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+  C:/Qt/6.7.0/mingw_64/include/QtWidgets/qboxlayout.h \
+  C:/Qt/6.7.0/mingw_64/include/QtWidgets/qdialog.h \
+  C:/Qt/6.7.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
+  C:/Qt/6.7.0/mingw_64/include/QtWidgets/qgridlayout.h \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qlabel.h \
+  C:/Qt/6.7.0/mingw_64/include/QtWidgets/qlayout.h \
+  C:/Qt/6.7.0/mingw_64/include/QtWidgets/qlayoutitem.h \
+  C:/Qt/6.7.0/mingw_64/include/QtWidgets/qmessagebox.h \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
@@ -361,7 +371,10 @@ C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/archive.h \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/book.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/firefighter.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/hubwidget.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/inventory.h \
-  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tools.h
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/shop.h \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tool.h

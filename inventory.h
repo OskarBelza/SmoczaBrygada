@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QVector>
-#include "tools.h"
+#include "tool.h"
 
 class Inventory : public QObject {
     Q_OBJECT

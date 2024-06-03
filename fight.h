@@ -4,7 +4,7 @@
 #include <QObject>
 #include "firefighter.h"
 #include "dragon.h"
-#include "tools.h"
+#include "tool.h"
 
 class Fight : public QObject {
     Q_OBJECT

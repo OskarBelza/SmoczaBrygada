@@ -1,8 +1,7 @@
-C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/EWIEGA46WW/moc_fight.cpp: C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/fight.h \
+C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/EWIEGA46WW/moc_archive.cpp: C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/archive.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/moc_predefs.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QObject \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QString \
-  C:/Qt/6.7.0/mingw_64/include/QtCore/QVector \
   C:/Qt/6.7.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/q20memory.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/q20type_traits.h \
@@ -98,7 +97,6 @@ C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_
   C:/Qt/6.7.0/mingw_64/include/QtCore/qtypeinfo.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qtypes.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qutf8stringview.h \
-  C:/Qt/6.7.0/mingw_64/include/QtCore/qvector.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/qyieldcpu.h \
@@ -300,7 +298,4 @@ C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
-  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/dragon.h \
-  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/firefighter.h \
-  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/inventory.h \
-  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tool.h
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/book.h

@@ -9,98 +9,143 @@ HubWidget::HubWidget(QWidget *parent) : QWidget(parent) {
     messageLabel->setWordWrap(true);
     messageLabel->setStyleSheet("font-size: 24px; font-weight: bold;");
 
-    captainButton = new QPushButton("Kapitan Straży", this);
-    shopkeeperButton = new QPushButton("Sklepikarz", this);
-    archivistButton = new QPushButton("Archiwista", this);
-    nextMissionButton = new QPushButton("Rozpocznij kolejną misję", this);
-    returnButton = new QPushButton("Wróć", this);
-    showArchivesButton = new QPushButton("Pokaż archiwum", this);
+    mainLayout = new QVBoxLayout(this);
+    topSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+    bottomSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-    captainButton->setFixedSize(200, 50);
-    shopkeeperButton->setFixedSize(200, 50);
-    archivistButton->setFixedSize(200, 50);
-    nextMissionButton->setFixedSize(200, 50);
-    returnButton->setFixedSize(200, 50);
-    showArchivesButton->setFixedSize(200, 50);
+    mainLayout->addItem(topSpacer);
+    mainLayout->addWidget(messageLabel, 0, Qt::AlignCenter);
 
-    QVBoxLayout *layout = new QVBoxLayout(this);
-    layout->addSpacerItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
-    layout->addWidget(messageLabel, 0, Qt::AlignCenter);
-    layout->addWidget(captainButton, 0, Qt::AlignCenter);
-    layout->addWidget(shopkeeperButton, 0, Qt::AlignCenter);
-    layout->addWidget(archivistButton, 0, Qt::AlignCenter);
-    layout->addWidget(nextMissionButton, 0, Qt::AlignCenter);
-    layout->addWidget(returnButton, 0, Qt::AlignCenter);
-    layout->addWidget(showArchivesButton, 0, Qt::AlignCenter);
-    layout->addSpacerItem(new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding));
-    setLayout(layout);
+    setLayout(mainLayout);
 
-    nextMissionButton->hide();
-    returnButton->hide();
-    showArchivesButton->hide();
+    bookLayout = new QGridLayout();
+    bookLayout->setAlignment(Qt::AlignTop);
+    mainLayout->insertLayout(1, bookLayout);
 
-    connect(captainButton, &QPushButton::clicked, this, &HubWidget::captainButtonClicked);
-    connect(shopkeeperButton, &QPushButton::clicked, this, &HubWidget::shopkeeperButtonClicked);
-    connect(archivistButton, &QPushButton::clicked, this, &HubWidget::archivistButtonClicked);
-    connect(nextMissionButton, &QPushButton::clicked, this, &HubWidget::nextMissionConfirmed);
-    connect(returnButton, &QPushButton::clicked, this, &HubWidget::returnToHub);
-    connect(showArchivesButton, &QPushButton::clicked, this, &HubWidget::showArchives);
+    shopItemLayout = new QGridLayout();
+    shopItemLayout->setAlignment(Qt::AlignTop);
+    mainLayout->insertLayout(1, shopItemLayout);
+
+    messageLabel->hide();
+
+    createButton("captainButton", "Kapitan Straży");
+    createButton("shopkeeperButton", "Sklepikarz");
+    createButton("archivistButton", "Archiwista");
+    createButton("nextMissionButton", "Rozpocznij kolejną misję");
+    createButton("returnButton", "Wróć");
+    createButton("showArchivesButton", "Pokaż archiwum");
+
+    buttons["nextMissionButton"]->hide();
+    buttons["returnButton"]->hide();
+    buttons["showArchivesButton"]->hide();
+}
+
+void HubWidget::createButton(const QString &name, const QString &text) {
+    QPushButton *button = new QPushButton(text, this);
+    button->setFixedSize(180, 50);
+    buttons[name] = button;
+    mainLayout->addWidget(button, 0, Qt::AlignCenter);
+    connect(button, &QPushButton::clicked, [this, name]() {
+        emit buttonClicked(name);
+    });
 }
 
 void HubWidget::showCompletionMessage(const QString &message) {
     messageLabel->setText(message);
+    messageLabel->show();
 }
 
 void HubWidget::showConfirmationMessage(const QString &message) {
     messageLabel->setText(message);
+    messageLabel->show();
 }
 
 void HubWidget::showInsufficientLevelMessage(const QString &message) {
     messageLabel->setText(message);
-    returnButton->show();
-    showArchivesButton->hide();
-    nextMissionButton->hide();
+    messageLabel->show();
+    setButtonVisibility("returnButton", true);
+    setButtonVisibility("showArchivesButton", false);
+    setButtonVisibility("nextMissionButton", false);
 }
 
 void HubWidget::showArchivistOptions() {
     messageLabel->setText("Witam w archiwum");
-    returnButton->show();
-    showArchivesButton->show();
-    nextMissionButton->hide();
+    messageLabel->show();
+    setButtonVisibility("returnButton", true);
+    setButtonVisibility("showArchivesButton", true);
+    setButtonVisibility("nextMissionButton", false);
 }
 
 void HubWidget::showConfirmationButtons() {
-    nextMissionButton->show();
-    returnButton->show();
-    hideMainButtons();
+    setButtonVisibility("nextMissionButton", true);
+    setButtonVisibility("returnButton", true);
+    setButtonVisibility("captainButton", false);
+    setButtonVisibility("shopkeeperButton", false);
+    setButtonVisibility("archivistButton", false);
 }
 
 void HubWidget::hideConfirmationButtons() {
-    nextMissionButton->hide();
-    returnButton->hide();
-    showMainButtons();
+    setButtonVisibility("nextMissionButton", false);
+    setButtonVisibility("returnButton", false);
+    setButtonVisibility("captainButton", true);
+    setButtonVisibility("shopkeeperButton", true);
+    setButtonVisibility("archivistButton", true);
 }
 
-void HubWidget::showReturnButton() {
-    returnButton->show();
+void HubWidget::setButtonVisibility(const QString &buttonName, bool visible) {
+    if (buttons.contains(buttonName)) {
+        buttons[buttonName]->setVisible(visible);
+    }
 }
 
-void HubWidget::hideReturnButton() {
-    returnButton->hide();
+void HubWidget::addBookButton(const QString &title, int index) {
+    QPushButton *button = new QPushButton(title, this);
+    messageLabel->setText("Wybierz książkę");
+    button->setFixedSize(180, 50);
+
+    int row = index / 3;
+    int col = index % 3;
+
+    bookLayout->addWidget(button, row, col, Qt::AlignTop | Qt::AlignCenter);
+    bookLayout->setSpacing(10);
+    bookButtons.append(button);
+    connect(button, &QPushButton::clicked, [this, index]() {
+        emit bookButtonClicked(index);
+    });
 }
 
-void HubWidget::hideMainButtons() {
-    captainButton->hide();
-    shopkeeperButton->hide();
-    archivistButton->hide();
+void HubWidget::clearBookButtons() {
+    for (auto button : bookButtons) {
+        bookLayout->removeWidget(button);
+        delete button;
+    }
+    bookButtons.clear();
 }
 
-void HubWidget::showMainButtons() {
-    captainButton->show();
-    shopkeeperButton->show();
-    archivistButton->show();
+void HubWidget::addShopItemButton(const QString &name, int index) {
+    QPushButton *button = new QPushButton(name, this);
+    messageLabel->setText("Wybierz przedmiot");
+    button->setFixedSize(180, 50);
+
+    int row = index / 3;
+    int col = index % 3;
+
+    shopItemLayout->addWidget(button, row, col, Qt::AlignTop | Qt::AlignCenter);
+    shopItemLayout->setSpacing(10);
+    shopItemButtons.append(button);
+    connect(button, &QPushButton::clicked, [this, index]() {
+        emit shopItemButtonClicked(index);
+    });
 }
 
-void HubWidget::hideArchivesButton() {
-    showArchivesButton->hide();
+void HubWidget::clearShopItemButtons() {
+    for (auto button : shopItemButtons) {
+        shopItemLayout->removeWidget(button);
+        delete button;
+    }
+    shopItemButtons.clear();
+}
+
+void HubWidget::showMessageBox(const QString &title, const QString &content) {
+    QMessageBox::information(this, title, content);
 }

@@ -255,6 +255,18 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/archive.h",
+			"MU",
+			"EWIEGA46WW/moc_archive.cpp",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/book.h",
+			"MU",
+			"EWIEGA46WW/moc_book.cpp",
+			null
+		],
+		[
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/dragon.h",
 			"MU",
 			"EWIEGA46WW/moc_dragon.cpp",
@@ -315,9 +327,15 @@
 			null
 		],
 		[
-			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tools.h",
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/shop.h",
 			"MU",
-			"EWIEGA46WW/moc_tools.cpp",
+			"EWIEGA46WW/moc_shop.cpp",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tool.h",
+			"MU",
+			"EWIEGA46WW/moc_tool.cpp",
 			null
 		],
 		[
@@ -399,6 +417,16 @@
 	"SOURCES" : 
 	[
 		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/archive.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/book.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/dragon.cpp",
 			"MU",
 			null
@@ -450,7 +478,12 @@
 			null
 		],
 		[
-			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tools.cpp",
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/shop.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tool.cpp",
 			"MU",
 			null
 		],

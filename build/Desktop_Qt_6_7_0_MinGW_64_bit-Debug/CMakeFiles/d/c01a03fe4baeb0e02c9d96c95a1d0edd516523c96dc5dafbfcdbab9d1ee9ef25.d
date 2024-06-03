@@ -1,4 +1,5 @@
 SmoczaBrygada_autogen/timestamp: \
+  C:/Qt/6.7.0/mingw_64/include/QtCore/QMap \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QObject \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QString \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QStringList \
@@ -150,6 +151,7 @@ SmoczaBrygada_autogen/timestamp: \
   C:/Qt/6.7.0/mingw_64/include/QtGui/qtransform.h \
   C:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.7.0/mingw_64/include/QtWidgets/QGridLayout \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/QHBoxLayout \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/QLabel \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow \
@@ -543,6 +545,10 @@ SmoczaBrygada_autogen/timestamp: \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/CMakeLists.txt \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/archive.cpp \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/archive.h \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/book.cpp \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/book.h \
   .qtc/package-manager/auto-setup.cmake \
   CMakeFiles/3.27.7/CMakeCXXCompiler.cmake \
   CMakeFiles/3.27.7/CMakeRCCompiler.cmake \
@@ -570,7 +576,9 @@ SmoczaBrygada_autogen/timestamp: \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/mission.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/missionwidget.cpp \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/missionwidget.h \
-  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tools.cpp \
-  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tools.h \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/shop.cpp \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/shop.h \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tool.cpp \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tool.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tutorialmission.cpp \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tutorialmission.h

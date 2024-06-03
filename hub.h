@@ -4,6 +4,8 @@
 #include <QObject>
 #include "hubwidget.h"
 #include "firefighter.h"
+#include "archive.h"
+#include "shop.h"
 
 class Hub : public QObject {
     Q_OBJECT
@@ -12,22 +14,25 @@ public:
 
 signals:
     void startNextMission();
-    void showHub();
+    void showCaptain();
     void showShopkeeper();
     void showArchivist();
-    void showArchives();
+    void showHub();
 
 private slots:
-    void onCaptainButtonClicked();
-    void onShopkeeperButtonClicked();
-    void onArchivistButtonClicked();
-    void onNextMissionConfirmed();
-    void onReturnToHub();
-    void checkArchivistAccess();
+    void onButtonClicked(const QString &buttonName);
+    void onBookButtonClicked(int index);
+    void onShopItemButtonClicked(int index);
 
 private:
+    void checkArchivistAccess();
+    void createBookButtons();
+    void createShopItemButtons();
+
     HubWidget *hubWidget;
     Firefighter *firefighter;
+    Archive *archive;
+    Shop *shop;
 };
 
 #endif // HUB_H

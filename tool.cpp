@@ -1,4 +1,4 @@
-#include "tools.h"
+#include "tool.h"
 
 Tools::Tools(const QString& name, int firePower, int level, int quantity, const QString& description, bool consumable, bool usable)
     : name(name), firePower(firePower), level(level), quantity(quantity), description(description), consumable(consumable), usable(usable) {}

@@ -8,22 +8,22 @@ MissionWidget::MissionWidget(QWidget *parent) : QWidget(parent) {
     mainLayout = new QVBoxLayout(this);
 
     // Ustawienia QLabel
-    missionDescriptionLabel->setFixedSize(500, 150);
+    missionDescriptionLabel->setFixedSize(550, 200);
     missionDescriptionLabel->setAlignment(Qt::AlignCenter);
-    missionDescriptionLabel->setStyleSheet("font-size: 18px; color: darkgray;");
+    missionDescriptionLabel->setStyleSheet("font-size: 18px; font-weight: bold;");
     missionDescriptionLabel->setWordWrap(true); // Włączamy zawijanie tekstu
 
-    heroHealthLabel->setFixedSize(500, 50);
+    heroHealthLabel->setFixedSize(450, 50);
     heroHealthLabel->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     heroHealthLabel->setStyleSheet("font-size: 16px; color: red; font-weight: bold;");
 
-    heroInventoryButton->setFixedSize(100, 30);
+    heroInventoryButton->setFixedSize(100, 40);
 
     connect(heroInventoryButton, &QPushButton::clicked, this, &MissionWidget::showInventory);
 
     for (int i = 0; i < 3; ++i) {
         buttons[i] = new QPushButton(this);
-        buttons[i]->setFixedSize(200, 25);
+        buttons[i]->setFixedSize(180, 50);
         buttons[i]->hide();
         buttonLayout->addWidget(buttons[i]);
         connect(buttons[i], &QPushButton::clicked, this, [this, i]() { emit buttonClicked(i); });

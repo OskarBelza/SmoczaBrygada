@@ -1,5 +1,5 @@
-#ifndef TOOLS_H
-#define TOOLS_H
+#ifndef TOOL_H
+#define TOOL_H
 
 #include <QString>
 
@@ -31,4 +31,4 @@ private:
     void updateFirePower();
 };
 
-#endif // TOOLS_H
+#endif // TOOL_H
