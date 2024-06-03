@@ -1,0 +1,17 @@
+# ninja log v5
+1	2446	7391336557929648	SmoczaBrygada_autogen/timestamp	3f322b2c48d77b36
+1	2446	7391336557929648	SmoczaBrygada_autogen/mocs_compilation.cpp	3f322b2c48d77b36
+1	2446	7391336557929648	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/timestamp	3f322b2c48d77b36
+1	2446	7391336557929648	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/mocs_compilation.cpp	3f322b2c48d77b36
+2463	4143	7391336575259882	CMakeFiles/SmoczaBrygada.dir/mission.cpp.obj	f0cbe257da7ba0c9
+2482	4236	7391336576276444	CMakeFiles/SmoczaBrygada.dir/tools.cpp.obj	9e3364bd57ca93fc
+2472	4525	7391336579415487	CMakeFiles/SmoczaBrygada.dir/game.cpp.obj	302369df97342e95
+2458	4595	7391336580123759	CMakeFiles/SmoczaBrygada.dir/dragon.cpp.obj	565b67d09c911596
+2479	4651	7391336580680660	CMakeFiles/SmoczaBrygada.dir/tutorialmission.cpp.obj	171629240f5f5ad0
+2461	4736	7391336581523340	CMakeFiles/SmoczaBrygada.dir/firefighter.cpp.obj	2e5963f5dddc400
+2466	4852	7391336582699787	CMakeFiles/SmoczaBrygada.dir/hubwidget.cpp.obj	2cfbb70e3588bdbf
+2450	4993	7391336584093690	CMakeFiles/SmoczaBrygada.dir/SmoczaBrygada_autogen/mocs_compilation.cpp.obj	f5a9a84cda88df35
+2453	5060	7391336584761316	CMakeFiles/SmoczaBrygada.dir/mainwindow.cpp.obj	70f67ceec335824e
+2447	5143	7391336585603363	CMakeFiles/SmoczaBrygada.dir/main.cpp.obj	eea17928f2d98ca3
+2477	5147	7391336585643495	CMakeFiles/SmoczaBrygada.dir/missionwidget.cpp.obj	971f3c0a83a25071
+5147	5355	7391336587694921	SmoczaBrygada.exe	c2f6812b6660d039
