@@ -3,9 +3,7 @@
 
 #include <QString>
 #include <QObject>
-#include <QVector>
-#include "tools.h"
-
+#include "inventory.h"
 
 class Firefighter : public QObject {
     Q_OBJECT
@@ -17,19 +15,16 @@ public:
     int getExperiencePoints() const;
     void takeDamage(int damage);
     void addExperience(int points);
-    void addTool(const Tools& tool);
-    Tools* getTool(const QString& toolName);
-    QVector<Tools> getTools() const;
+    Inventory* getInventory();
 
 signals:
     void healthChanged(int newHealth);
-    void inventoryChanged();
 
 private:
     QString name;
     int health;
     int experiencePoints;
-    QVector<Tools> tools; // Adding the tools member
+    Inventory* inventory; // Use Inventory* instead of Inventory
 };
 
 #endif // FIREFIGHTER_H

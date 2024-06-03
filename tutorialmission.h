@@ -4,6 +4,7 @@
 #include "mission.h"
 #include "firefighter.h"
 #include "dragon.h"
+#include "fight.h"
 #include <QObject>
 
 class TutorialMission : public Mission {
@@ -18,9 +19,8 @@ public slots:
     void handleIntroDialogue();
     void handleToolsInfo();
     void handleBattlefieldDescription();
-    void handleBattle();
-    void handleWaterBomb();
-    void handleWaterGun();
+    void handleFight(); // Nowa metoda
+    void handleFightEnded(bool);
 
 private:
     Firefighter* firefighter;
@@ -29,8 +29,6 @@ private:
     void connectButtonsForIntro();
     void connectButtonsForToolsInfo();
     void connectButtonsForBattlefieldDescription();
-    void connectButtonsForBattle();
-    void checkBattleOutcome();
 };
 
 #endif // TUTORIALMISSION_H

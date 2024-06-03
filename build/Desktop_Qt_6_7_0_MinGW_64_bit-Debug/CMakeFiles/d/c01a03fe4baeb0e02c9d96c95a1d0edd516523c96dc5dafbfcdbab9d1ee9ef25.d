@@ -550,12 +550,16 @@ SmoczaBrygada_autogen/timestamp: \
   SmoczaBrygada_autogen/moc_predefs.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/dragon.cpp \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/dragon.h \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/fight.cpp \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/fight.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/firefighter.cpp \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/firefighter.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/game.cpp \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/game.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/hubwidget.cpp \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/hubwidget.h \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/inventory.cpp \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/inventory.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/main.cpp \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/mainwindow.cpp \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/mainwindow.h \

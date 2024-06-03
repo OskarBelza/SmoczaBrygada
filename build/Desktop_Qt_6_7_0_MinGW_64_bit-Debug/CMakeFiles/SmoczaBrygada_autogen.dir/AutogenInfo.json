@@ -261,6 +261,12 @@
 			null
 		],
 		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/fight.h",
+			"MU",
+			"EWIEGA46WW/moc_fight.cpp",
+			null
+		],
+		[
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/firefighter.h",
 			"MU",
 			"EWIEGA46WW/moc_firefighter.cpp",
@@ -276,6 +282,12 @@
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/hubwidget.h",
 			"MU",
 			"EWIEGA46WW/moc_hubwidget.cpp",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/inventory.h",
+			"MU",
+			"EWIEGA46WW/moc_inventory.cpp",
 			null
 		],
 		[
@@ -386,6 +398,11 @@
 			null
 		],
 		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/fight.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/firefighter.cpp",
 			"MU",
 			null
@@ -397,6 +414,11 @@
 		],
 		[
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/hubwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/inventory.cpp",
 			"MU",
 			null
 		],

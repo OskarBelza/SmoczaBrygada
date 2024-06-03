@@ -18,8 +18,8 @@ void TutorialMission::handleIntroDialogue() {
 
 void TutorialMission::handleToolsInfo() {
     emit updateMissionStatus("Otrzymałeś nowy sprzęt: Bomba wodna i Pistolet wodny.");
-    firefighter->addTool(Tools("Bomba wodna", 60));
-    firefighter->addTool(Tools("Pistolet wodny", 30));
+    firefighter->getInventory()->addTool(Tools("Bomba wodna", 60, 1, 1, "Mocna broń przeciwko smokom", true));
+    firefighter->getInventory()->addTool(Tools("Pistolet wodny", 30, 1, 1, "Słabsza broń przeciwko smokom", false));
     connectButtonsForToolsInfo();
 }
 
@@ -28,27 +28,26 @@ void TutorialMission::handleBattlefieldDescription() {
     connectButtonsForBattlefieldDescription();
 }
 
-void TutorialMission::handleBattle() {
-    emit updateMissionStatus("Rozpoczyna się walka! Wybierz broń:");
-    connectButtonsForBattle();
+void TutorialMission::handleFight() {
+    Fight* fight = new Fight(firefighter, dragon, this);
+
+    connect(fight, &Fight::updateFightStatus, this, &TutorialMission::updateMissionStatus);
+    connect(fight, &Fight::configureButton, this, &TutorialMission::configureButton);
+    connect(fight, &Fight::fightEnded, this, &TutorialMission::handleFightEnded);
+
+    fight->start();
 }
 
-void TutorialMission::handleWaterBomb() {
-    Tools* waterBomb = firefighter->getTool("Bomba wodna");
-    if (waterBomb) {
-        dragon->takeDamage(waterBomb->getFirePower());
+void TutorialMission::handleFightEnded(bool won) {
+    if (won) {
+        emit updateMissionStatus("Pokonałeś smoka!");
+        emit missionCompleted();
+    } else {
+        emit updateMissionStatus("Game Over! Zostałeś pokonany przez smoka.");
+        emit configureButton(0, "", false, nullptr);
+        emit configureButton(1, "", false, nullptr);
+        emit configureButton(2, "", false, nullptr);
     }
-    firefighter->takeDamage(dragon->getFirePower());
-    checkBattleOutcome();
-}
-
-void TutorialMission::handleWaterGun() {
-    Tools* waterGun = firefighter->getTool("Pistolet wodny");
-    if (waterGun) {
-        dragon->takeDamage(waterGun->getFirePower());
-    }
-    firefighter->takeDamage(dragon->getFirePower());
-    checkBattleOutcome();
 }
 
 void TutorialMission::connectButtonsForIntro() {
@@ -64,30 +63,7 @@ void TutorialMission::connectButtonsForToolsInfo() {
 }
 
 void TutorialMission::connectButtonsForBattlefieldDescription() {
-    emit configureButton(0, "Rozpocznij walkę", true, [this] { handleBattle(); });
+    emit configureButton(0, "Rozpocznij walkę", true, [this] { handleFight(); });
     emit configureButton(1, "", false, nullptr);
     emit configureButton(2, "", false, nullptr);
-}
-
-void TutorialMission::connectButtonsForBattle() {
-    emit configureButton(0, "Użyj bomby wodnej", true, [this] { handleWaterBomb(); });
-    emit configureButton(1, "Użyj pistoletu wodnego", true, [this] { handleWaterGun(); });
-    emit configureButton(2, "", false, nullptr);
-}
-
-void TutorialMission::checkBattleOutcome() {
-    if (firefighter->getHealth() <= 0) {
-        emit updateMissionStatus("Game Over! Zostałeś pokonany przez smoka.");
-        emit configureButton(0, "", false, nullptr);
-        emit configureButton(1, "", false, nullptr);
-        emit configureButton(2, "", false, nullptr);
-    } else if (dragon->getHealth() <= 0) {
-        emit updateMissionStatus("Pokonałeś smoka!");
-        firefighter->addExperience(100);
-        emit missionCompleted();
-    } else {
-        QString status = QString("Smok nadal żyje! Zdrowie smoka: %1. Wybierz kolejną akcję:").arg(dragon->getHealth());
-        emit updateMissionStatus(status);
-        connectButtonsForBattle();
-    }
 }

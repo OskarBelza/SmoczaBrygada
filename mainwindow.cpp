@@ -96,7 +96,7 @@ void MainWindow::connectMissionSignals(Mission* mission) {
 void MainWindow::connectHeroSignals() {
     auto firefighter = game->getMainCharacter();
     connect(firefighter, &Firefighter::healthChanged, missionWidget, &MissionWidget::setHeroHealth);
-    connect(firefighter, &Firefighter::inventoryChanged, this, &MainWindow::updateHeroStats);
+    connect(firefighter->getInventory(), &Inventory::inventoryChanged, this, &MainWindow::updateHeroStats);
 }
 
 void MainWindow::updateHeroStats() {
@@ -104,8 +104,13 @@ void MainWindow::updateHeroStats() {
     missionWidget->setHeroHealth(firefighter->getHealth());
 
     QStringList inventory;
-    for (const auto& tool : firefighter->getTools()) {
-        inventory << tool.getName();
+    for (const auto& tool : firefighter->getInventory()->getTools()) {
+        inventory << QString("%1 (Qty: %2, Level: %3, Firepower: %4, Consumable: %5)")
+                         .arg(tool.getName())
+                         .arg(tool.getQuantity())
+                         .arg(tool.getLevel())
+                         .arg(tool.getFirePower())
+                         .arg(tool.isConsumable() ? "Yes" : "No");
     }
     missionWidget->setHeroInventory(inventory);
 }
