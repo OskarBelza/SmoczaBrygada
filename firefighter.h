@@ -13,18 +13,21 @@ public:
     QString getName() const;
     int getHealth() const;
     int getExperiencePoints() const;
+    int getLevel() const; // Nowa metoda zwracająca poziom
     void takeDamage(int damage);
     void addExperience(int points);
     Inventory* getInventory();
 
 signals:
     void healthChanged(int newHealth);
+    void levelUp(int newLevel); // Nowy sygnał informujący o awansie na nowy poziom
 
 private:
     QString name;
     int health;
     int experiencePoints;
-    Inventory* inventory; // Use Inventory* instead of Inventory
+    int lvl; // Nowe pole przechowujące poziom
+    Inventory* inventory; // Użyj Inventory* zamiast Inventory
 };
 
 #endif // FIREFIGHTER_H

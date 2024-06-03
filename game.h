@@ -1,11 +1,9 @@
-
 #ifndef GAME_H
 #define GAME_H
 
 #include <QObject>
 #include <QVector>
 #include "firefighter.h"
-#include "dragon.h"
 #include "tutorialmission.h"
 
 class Game : public QObject {
@@ -25,7 +23,6 @@ signals:
 
 private:
     Firefighter *firefighter;
-    Dragon *dragon;
     QVector<Mission*> missions;
     int currentMissionIndex;
 

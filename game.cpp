@@ -2,10 +2,9 @@
 
 Game::Game() : currentMissionIndex(0) {
     firefighter = new Firefighter("Strażak");
-    dragon = new Dragon("Smok", 30);
 
     // Dodajemy misje do listy misji
-    missions.append(new TutorialMission(firefighter, dragon, this));
+    missions.append(new TutorialMission(firefighter, this));
     // Tutaj można dodać kolejne misje w przyszłości
 
     connect(missions.first(), &Mission::missionCompleted, this, &Game::onMissionCompleted);

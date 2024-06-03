@@ -33,6 +33,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         tutorialmission.h tutorialmission.cpp
         inventory.h inventory.cpp
         fight.h fight.cpp
+        hub.h hub.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET SmoczaBrygada APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

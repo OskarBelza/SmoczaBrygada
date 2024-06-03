@@ -1,7 +1,9 @@
 #include "tutorialmission.h"
 
-TutorialMission::TutorialMission(Firefighter* firefighter, Dragon* dragon, QObject *parent)
-    : Mission(parent), firefighter(firefighter), dragon(dragon) {}
+TutorialMission::TutorialMission(Firefighter* firefighter, QObject *parent)
+    : Mission(parent), firefighter(firefighter) {
+    dragon = new Dragon("Smok", 30);
+}
 
 QString TutorialMission::getDescription() const {
     return "Witaj w misji samouczkowej! Twoim zadaniem jest pokonać smoka.";
@@ -13,19 +15,19 @@ void TutorialMission::start() {
 
 void TutorialMission::handleIntroDialogue() {
     emit updateMissionStatus("Witaj w grze Smocza Brygada! Twoim celem jest pokonać smoka. Aby to zrobić, musisz użyć swojego sprzętu strażackiego. Rozumiesz?");
-    connectButtonsForIntro();
+    connectButtons("Dalej", [this] { handleToolsInfo(); });
 }
 
 void TutorialMission::handleToolsInfo() {
     emit updateMissionStatus("Otrzymałeś nowy sprzęt: Bomba wodna i Pistolet wodny.");
     firefighter->getInventory()->addTool(Tools("Bomba wodna", 60, 1, 1, "Mocna broń przeciwko smokom", true));
     firefighter->getInventory()->addTool(Tools("Pistolet wodny", 30, 1, 1, "Słabsza broń przeciwko smokom", false));
-    connectButtonsForToolsInfo();
+    connectButtons("Dalej", [this] { handleBattlefieldDescription(); });
 }
 
 void TutorialMission::handleBattlefieldDescription() {
     emit updateMissionStatus("Opis pola walki: Jesteś na polu walki. Smok stoi przed tobą, gotowy do ataku. Co chcesz zrobić?");
-    connectButtonsForBattlefieldDescription();
+    connectButtons("Rozpocznij walkę", [this] { handleFight(); });
 }
 
 void TutorialMission::handleFight() {
@@ -44,26 +46,14 @@ void TutorialMission::handleFightEnded(bool won) {
         emit missionCompleted();
     } else {
         emit updateMissionStatus("Game Over! Zostałeś pokonany przez smoka.");
-        emit configureButton(0, "", false, nullptr);
-        emit configureButton(1, "", false, nullptr);
-        emit configureButton(2, "", false, nullptr);
+        connectButtons("", nullptr, "", nullptr, "", nullptr);
     }
 }
 
-void TutorialMission::connectButtonsForIntro() {
-    emit configureButton(0, "Dalej", true, [this] { handleToolsInfo(); });
-    emit configureButton(1, "", false, nullptr);
-    emit configureButton(2, "", false, nullptr);
-}
-
-void TutorialMission::connectButtonsForToolsInfo() {
-    emit configureButton(0, "Dalej", true, [this] { handleBattlefieldDescription(); });
-    emit configureButton(1, "", false, nullptr);
-    emit configureButton(2, "", false, nullptr);
-}
-
-void TutorialMission::connectButtonsForBattlefieldDescription() {
-    emit configureButton(0, "Rozpocznij walkę", true, [this] { handleFight(); });
-    emit configureButton(1, "", false, nullptr);
-    emit configureButton(2, "", false, nullptr);
+void TutorialMission::connectButtons(const QString& button0Text, std::function<void()> button0Handler,
+                                     const QString& button1Text, std::function<void()> button1Handler,
+                                     const QString& button2Text, std::function<void()> button2Handler) {
+    emit configureButton(0, button0Text, !button0Text.isEmpty(), button0Handler);
+    emit configureButton(1, button1Text, !button1Text.isEmpty(), button1Handler);
+    emit configureButton(2, button2Text, !button2Text.isEmpty(), button2Handler);
 }

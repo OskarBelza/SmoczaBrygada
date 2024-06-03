@@ -4,7 +4,8 @@
 #include <QMainWindow>
 #include "game.h"
 #include "missionwidget.h"
-#include "hubwidget.h" // dodajemy import
+#include "hubwidget.h"
+#include "hub.h"
 
 namespace Ui {
 class MainWindow;
@@ -23,16 +24,18 @@ private slots:
     void updateHeroStats();
     void showCompletionScreen();
     void startNextMission();
+    void returnToHub();
 
 private:
     Ui::MainWindow *ui;
     Game *game;
     MissionWidget *missionWidget;
     HubWidget *hubWidget;
+    Hub *hub;
 
     void showMissionScreen(const QString &description);
     void connectMissionSignals(Mission* mission);
-    void connectHeroSignals(); // Deklaracja metody
+    void connectHeroSignals();
 };
 
 #endif // MAINWINDOW_H

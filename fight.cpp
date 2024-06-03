@@ -22,7 +22,6 @@ void Fight::handleTool(Tools* tool) {
     if (tool->use()) {
         dragon->takeDamage(tool->getFirePower());
         emit firefighter->getInventory()->inventoryChanged();  // Emit signal after using the tool
-        firefighter->takeDamage(dragon->getFirePower());
         checkBattleOutcome();
     } else {
         emit updateFightStatus(QString("Nie masz już %1!").arg(tool->getName()));
@@ -40,6 +39,7 @@ void Fight::checkBattleOutcome() {
         emit fightEnded(true);
     } else {
         QString status = QString("Smok nadal żyje! Zdrowie smoka: %1. Wybierz kolejną akcję:").arg(dragon->getHealth());
+        firefighter->takeDamage(dragon->getFirePower());
         emit updateFightStatus(status);
         connectButtonsForBattle();
     }

@@ -10,7 +10,7 @@
 class TutorialMission : public Mission {
     Q_OBJECT
 public:
-    TutorialMission(Firefighter* firefighter, Dragon* dragon, QObject *parent = nullptr);
+    TutorialMission(Firefighter* firefighter, QObject *parent = nullptr);
 
     QString getDescription() const override;
     void start() override;
@@ -19,16 +19,16 @@ public slots:
     void handleIntroDialogue();
     void handleToolsInfo();
     void handleBattlefieldDescription();
-    void handleFight(); // Nowa metoda
+    void handleFight();
     void handleFightEnded(bool);
 
 private:
     Firefighter* firefighter;
     Dragon* dragon;
 
-    void connectButtonsForIntro();
-    void connectButtonsForToolsInfo();
-    void connectButtonsForBattlefieldDescription();
+    void connectButtons(const QString& button0Text, std::function<void()> button0Handler,
+                        const QString& button1Text = QString(), std::function<void()> button1Handler = nullptr,
+                        const QString& button2Text = QString(), std::function<void()> button2Handler = nullptr);
 };
 
 #endif // TUTORIALMISSION_H

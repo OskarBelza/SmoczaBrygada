@@ -2,6 +2,7 @@
 #include "EWIEGA46WW/moc_fight.cpp"
 #include "EWIEGA46WW/moc_firefighter.cpp"
 #include "EWIEGA46WW/moc_game.cpp"
+#include "EWIEGA46WW/moc_hub.cpp"
 #include "EWIEGA46WW/moc_hubwidget.cpp"
 #include "EWIEGA46WW/moc_inventory.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"

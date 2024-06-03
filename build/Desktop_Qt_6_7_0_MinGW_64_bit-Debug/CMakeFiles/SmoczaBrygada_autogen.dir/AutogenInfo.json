@@ -279,6 +279,12 @@
 			null
 		],
 		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/hub.h",
+			"MU",
+			"EWIEGA46WW/moc_hub.cpp",
+			null
+		],
+		[
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/hubwidget.h",
 			"MU",
 			"EWIEGA46WW/moc_hubwidget.cpp",
@@ -412,6 +418,7 @@
 			"MU",
 			null
 		],
+		[ "C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/hub.cpp", "MU", null ],
 		[
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/hubwidget.cpp",
 			"MU",

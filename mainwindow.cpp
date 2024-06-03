@@ -8,7 +8,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
     , game(new Game)
     , missionWidget(new MissionWidget(this))
-    , hubWidget(new HubWidget(this)) // Inicjalizacja hubWidget
+    , hubWidget(new HubWidget(this))
+    , hub(new Hub(hubWidget, game->getMainCharacter(), this))
 {
     ui->setupUi(this);
 
@@ -28,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->exitButton, &QPushButton::clicked, this, &MainWindow::onExitClicked);
 
     missionWidget->hide();
-    hubWidget->hide(); // Ukrywamy hubWidget
+    hubWidget->hide();
     setCentralWidget(ui->centralwidget);
 
     connectMissionSignals(game->getCurrentMission());
@@ -37,7 +38,8 @@ MainWindow::MainWindow(QWidget *parent)
     updateHeroStats();
 
     connect(game, &Game::missionCompleted, this, &MainWindow::showCompletionScreen);
-    connect(hubWidget, &HubWidget::nextMissionButtonClicked, this, &MainWindow::startNextMission);
+    connect(hub, &Hub::startNextMission, this, &MainWindow::startNextMission);
+    connect(hub, &Hub::showHub, this, &MainWindow::returnToHub);
 }
 
 MainWindow::~MainWindow() {
@@ -45,6 +47,7 @@ MainWindow::~MainWindow() {
     delete game;
     delete missionWidget;
     delete hubWidget;
+    delete hub;
 }
 
 void MainWindow::onNewGameClicked() {
@@ -65,14 +68,14 @@ void MainWindow::onExitClicked() {
 void MainWindow::showMissionScreen(const QString &description) {
     missionWidget->setMissionDescription(description);
     missionWidget->show();
-    hubWidget->hide(); // Ukrywamy hubWidget
+    hubWidget->hide();
     setCentralWidget(missionWidget);
 }
 
 void MainWindow::showCompletionScreen() {
     missionWidget->hide();
-    hubWidget->showCompletionMessage("Brawo! Ukończyłeś misję.");
-    hubWidget->show(); // Pokazujemy hubWidget
+    hubWidget->showCompletionMessage("Brawo! Ukończyłeś misję i wróciłeś do miasta.");
+    hubWidget->show();
     setCentralWidget(hubWidget);
 }
 
@@ -114,3 +117,10 @@ void MainWindow::updateHeroStats() {
     }
     missionWidget->setHeroInventory(inventory);
 }
+
+void MainWindow::returnToHub() {
+    hubWidget->hideConfirmationButtons();
+    hubWidget->showCompletionMessage("Brawo! Ukończyłeś misję i wróciłeś do miasta.");
+}
+
+
