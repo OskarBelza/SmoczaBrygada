@@ -1,5 +1,6 @@
 C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/EWIEGA46WW/moc_volcanomission.cpp: C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/volcanomission.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/moc_predefs.h \
+  C:/Qt/6.7.0/mingw_64/include/QtCore/QDataStream \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QObject \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QString \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QVector \

@@ -1,10 +1,9 @@
-// firefighter.h
-
 #ifndef FIREFIGHTER_H
 #define FIREFIGHTER_H
 
 #include <QObject>
 #include <QString>
+#include <QDataStream>
 #include "inventory.h"
 #include "tool.h"
 
@@ -25,6 +24,15 @@ public:
     Inventory* getInventory();
     void buyTool(Tools &tool);
     void heal(int heal);
+
+    void setName(const QString& name);
+    void setHealth(int health);
+    void setExperiencePoints(int points);
+    void setLevel(int level);
+    void setMoney(int money);
+
+    friend QDataStream& operator<<(QDataStream& out, const Firefighter& firefighter);
+    friend QDataStream& operator>>(QDataStream& in, Firefighter& firefighter);
 
 signals:
     void healthChanged(int health);

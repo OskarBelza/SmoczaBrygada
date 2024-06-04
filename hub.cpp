@@ -5,7 +5,7 @@ Hub::Hub(HubWidget *hubWidget, Firefighter *firefighter, QObject *parent)
     connect(hubWidget, &HubWidget::buttonClicked, this, &Hub::onButtonClicked);
     connect(hubWidget, &HubWidget::bookButtonClicked, this, &Hub::onBookButtonClicked);
     connect(hubWidget, &HubWidget::shopItemButtonClicked, this, &Hub::onShopItemButtonClicked);
-    connect(hubWidget, &HubWidget::shopItemRightClicked, this, &Hub::onShopItemRightClicked);  // Nowy sygnał
+    //connect(hubWidget, &HubWidget::shopItemRightClicked, this, &Hub::onShopItemRightClicked);
 
     shop->addTool(Tools("Bomba wodna", 60, 1, 2, "Mocna broń przeciwko smokom", true, 100));
     shop->addTool(Tools("Bomba wodna", 60, 1, 2, "Mocna broń przeciwko smokom", true, 100));
@@ -73,27 +73,27 @@ void Hub::createShopItemButtons() {
     }
 }
 
-void Hub::onShopItemRightClicked(int index) {
-    if (!firefighter || !hubWidget || !shop) {
-        qDebug() << "Null pointer detected!";
-        return;
-    }
+// void Hub::onShopItemRightClicked(int index) {
+//     if (!firefighter || !hubWidget || !shop) {
+//         qDebug() << "Null pointer detected!";
+//         return;
+//     }
 
-    auto &items = shop->getTools();
-    if (index >= 0 && index < items.size()) {
-        Tools &item = items[index];  // Use reference to the item
-        qDebug() << "Right-clicked item:" << item.getName();
-        int price = item.getPrice();
-        if (firefighter->getMoney() >= price) {
-            firefighter->buyTool(item);
-            hubWidget->showMessageBox("Zakup udany", QString("Zakupiłeś %1 za %2 złota.").arg(item.getName()).arg(price));
-        } else {
-            hubWidget->showMessageBox("Brak złota", "Nie masz wystarczającej ilości złota, aby kupić ten przedmiot.");
-        }
-    } else {
-        qDebug() << "Invalid index:" << index;
-    }
-}
+//     auto &items = shop->getTools();
+//     if (index >= 0 && index < items.size()) {
+//         Tools &item = items[index];  // Use reference to the item
+//         qDebug() << "Right-clicked item:" << item.getName();
+//         int price = item.getPrice();
+//         if (firefighter->getMoney() >= price) {
+//             firefighter->getInventory()->addTool(item);
+//             hubWidget->showMessageBox("Zakup udany", QString("Zakupiłeś %1 za %2 złota.").arg(item.getName()).arg(price));
+//         } else {
+//             hubWidget->showMessageBox("Brak złota", "Nie masz wystarczającej ilości złota, aby kupić ten przedmiot.");
+//         }
+//     } else {
+//         qDebug() << "Invalid index:" << index;
+//     }
+// }
 
 void Hub::checkArchivistAccess() {
     hubWidget->setButtonVisibility("captainButton", false);

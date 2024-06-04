@@ -17,6 +17,7 @@ public:
 
     void setMissionDescription(const QString &description);
     void configureButton(int buttonIndex, const QString &text, bool visible, const std::function<void()> &callback);
+    QVBoxLayout* getMainLayout(); // Dodajemy metodę do uzyskiwania głównego layoutu
 
     void setHeroHealth(int health) { commonWidget->setHeroHealth(health); }
     void setHeroInventory(const QStringList &inventory) { commonWidget->setHeroInventory(inventory); }

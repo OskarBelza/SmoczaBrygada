@@ -1,12 +1,8 @@
 #include "hubwidget.h"
 #include <QVBoxLayout>
 #include <QSpacerItem>
-#include <QMouseEvent>
-#include <QDebug>
 
-HubWidget::HubWidget(QWidget *parent) : QWidget(parent) {
-    qDebug() << "Initializing HubWidget";
-
+HubWidget::HubWidget(QWidget *parent) : QWidget(parent), commonWidget(new CommonWidget(this)) {
     messageLabel = new QLabel(this);
     messageLabel->setAlignment(Qt::AlignCenter);
     messageLabel->setFixedSize(500, 150);
@@ -17,6 +13,9 @@ HubWidget::HubWidget(QWidget *parent) : QWidget(parent) {
     topSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
     bottomSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
+    // Dodajemy commonWidget na samej górze
+    mainLayout->addWidget(commonWidget);
+
     mainLayout->addItem(topSpacer);
     mainLayout->addWidget(messageLabel, 0, Qt::AlignCenter);
 
@@ -24,11 +23,11 @@ HubWidget::HubWidget(QWidget *parent) : QWidget(parent) {
 
     bookLayout = new QGridLayout();
     bookLayout->setAlignment(Qt::AlignTop);
-    mainLayout->insertLayout(1, bookLayout);
+    mainLayout->insertLayout(2, bookLayout);
 
     shopItemLayout = new QGridLayout();
     shopItemLayout->setAlignment(Qt::AlignTop);
-    mainLayout->insertLayout(1, shopItemLayout);
+    mainLayout->insertLayout(2, shopItemLayout);
 
     messageLabel->hide();
 
@@ -42,32 +41,9 @@ HubWidget::HubWidget(QWidget *parent) : QWidget(parent) {
     buttons["nextMissionButton"]->hide();
     buttons["returnButton"]->hide();
     buttons["showArchivesButton"]->hide();
-
-    commonWidget = new CommonWidget(this);
-    mainLayout->insertWidget(0, commonWidget);
-}
-
-HubWidget::~HubWidget() {
-    qDebug() << "Destroying HubWidget";
-    clearBookButtons();
-    clearShopItemButtons();
-}
-
-void HubWidget::resetState() {
-    qDebug() << "Resetting HubWidget state";
-    messageLabel->hide();
-    setButtonVisibility("captainButton", true);
-    setButtonVisibility("shopkeeperButton", true);
-    setButtonVisibility("archivistButton", true);
-    setButtonVisibility("nextMissionButton", false);
-    setButtonVisibility("returnButton", false);
-    setButtonVisibility("showArchivesButton", false);
-    clearBookButtons();
-    clearShopItemButtons();
 }
 
 void HubWidget::createButton(const QString &name, const QString &text) {
-    qDebug() << "Creating button:" << name;
     QPushButton *button = new QPushButton(text, this);
     button->setFixedSize(180, 50);
     buttons[name] = button;
@@ -78,19 +54,16 @@ void HubWidget::createButton(const QString &name, const QString &text) {
 }
 
 void HubWidget::showCompletionMessage(const QString &message) {
-    qDebug() << "Showing completion message:" << message;
     messageLabel->setText(message);
     messageLabel->show();
 }
 
 void HubWidget::showConfirmationMessage(const QString &message) {
-    qDebug() << "Showing confirmation message:" << message;
     messageLabel->setText(message);
     messageLabel->show();
 }
 
 void HubWidget::showInsufficientLevelMessage(const QString &message) {
-    qDebug() << "Showing insufficient level message:" << message;
     messageLabel->setText(message);
     messageLabel->show();
     setButtonVisibility("returnButton", true);
@@ -99,7 +72,6 @@ void HubWidget::showInsufficientLevelMessage(const QString &message) {
 }
 
 void HubWidget::showArchivistOptions() {
-    qDebug() << "Showing archivist options";
     messageLabel->setText("Witam w archiwum");
     messageLabel->show();
     setButtonVisibility("returnButton", true);
@@ -108,7 +80,6 @@ void HubWidget::showArchivistOptions() {
 }
 
 void HubWidget::showConfirmationButtons() {
-    qDebug() << "Showing confirmation buttons";
     setButtonVisibility("nextMissionButton", true);
     setButtonVisibility("returnButton", true);
     setButtonVisibility("captainButton", false);
@@ -117,7 +88,6 @@ void HubWidget::showConfirmationButtons() {
 }
 
 void HubWidget::hideConfirmationButtons() {
-    qDebug() << "Hiding confirmation buttons";
     setButtonVisibility("nextMissionButton", false);
     setButtonVisibility("returnButton", false);
     setButtonVisibility("captainButton", true);
@@ -126,15 +96,13 @@ void HubWidget::hideConfirmationButtons() {
 }
 
 void HubWidget::setButtonVisibility(const QString &buttonName, bool visible) {
-    qDebug() << "Setting button visibility:" << buttonName << "to" << visible;
     if (buttons.contains(buttonName)) {
         buttons[buttonName]->setVisible(visible);
     }
 }
 
 void HubWidget::addBookButton(const QString &title, int index) {
-    qDebug() << "Adding book button:" << title << "at index:" << index;
-    ShopItemButton *button = new ShopItemButton(title, index, this);
+    QPushButton *button = new QPushButton(title, this);
     messageLabel->setText("Wybierz książkę");
     button->setFixedSize(180, 50);
 
@@ -144,13 +112,12 @@ void HubWidget::addBookButton(const QString &title, int index) {
     bookLayout->addWidget(button, row, col, Qt::AlignTop | Qt::AlignCenter);
     bookLayout->setSpacing(10);
     bookButtons.append(button);
-    connect(button, &ShopItemButton::clicked, [this, index]() {
+    connect(button, &QPushButton::clicked, [this, index]() {
         emit bookButtonClicked(index);
     });
 }
 
 void HubWidget::clearBookButtons() {
-    qDebug() << "Clearing book buttons";
     for (auto button : bookButtons) {
         bookLayout->removeWidget(button);
         delete button;
@@ -159,8 +126,7 @@ void HubWidget::clearBookButtons() {
 }
 
 void HubWidget::addShopItemButton(const QString &name, int index) {
-    qDebug() << "Adding shop item button:" << name << "at index:" << index;
-    ShopItemButton *button = new ShopItemButton(name, index, this);
+    QPushButton *button = new QPushButton(name, this);
     messageLabel->setText("Wybierz przedmiot");
     button->setFixedSize(180, 50);
 
@@ -170,18 +136,12 @@ void HubWidget::addShopItemButton(const QString &name, int index) {
     shopItemLayout->addWidget(button, row, col, Qt::AlignTop | Qt::AlignCenter);
     shopItemLayout->setSpacing(10);
     shopItemButtons.append(button);
-
-    connect(button, &ShopItemButton::clicked, [this, index]() {
+    connect(button, &QPushButton::clicked, [this, index]() {
         emit shopItemButtonClicked(index);
-    });
-
-    connect(button, &ShopItemButton::rightClicked, [this, index]() {
-        emit shopItemRightClicked(index);
     });
 }
 
 void HubWidget::clearShopItemButtons() {
-    qDebug() << "Clearing shop item buttons";
     for (auto button : shopItemButtons) {
         shopItemLayout->removeWidget(button);
         delete button;
@@ -190,6 +150,5 @@ void HubWidget::clearShopItemButtons() {
 }
 
 void HubWidget::showMessageBox(const QString &title, const QString &content) {
-    qDebug() << "Showing message box:" << title << content;
     QMessageBox::information(this, title, content);
 }

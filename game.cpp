@@ -22,8 +22,24 @@ void Game::startNewGame() {
     }
 }
 
-void Game::loadGame() {
-    emit gameStateChanged("Gra załadowana");
+void Game::saveGame() const {
+    QFile file("savegame.dat");
+    if (file.open(QIODevice::WriteOnly)) {
+        QDataStream out(&file);
+        out << currentMissionIndex;
+        out << *firefighter;
+        file.close();
+    }
+}
+
+void Game::loadGameFromFile() {
+    QFile file("savegame.dat");
+    if (file.open(QIODevice::ReadOnly)) {
+        QDataStream in(&file);
+        in >> currentMissionIndex;
+        in >> *firefighter;
+        file.close();
+    }
 }
 
 QString Game::getCurrentMissionDescription() const {

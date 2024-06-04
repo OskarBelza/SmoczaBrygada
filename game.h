@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QVector>
+#include <QFile>
 #include "firefighter.h"
 #include "tutorialmission.h"
 #include "smokedragonmission.h"
@@ -18,7 +19,8 @@ class Game : public QObject {
 public:
     Game();
     void startNewGame();
-    void loadGame();
+    void saveGame() const;
+    void loadGameFromFile();
     QString getCurrentMissionDescription() const;
     Mission* getCurrentMission() const;
     Firefighter* getMainCharacter() const;

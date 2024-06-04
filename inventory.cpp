@@ -19,3 +19,13 @@ Tools* Inventory::getTool(const QString& toolName) {
 QVector<Tools>& Inventory::getTools() {
     return tools;
 }
+
+QDataStream& operator<<(QDataStream& out, const Inventory& inventory) {
+    out << inventory.tools;
+    return out;
+}
+
+QDataStream& operator>>(QDataStream& in, Inventory& inventory) {
+    in >> inventory.tools;
+    return in;
+}

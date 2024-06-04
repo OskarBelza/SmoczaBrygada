@@ -2,7 +2,6 @@
 #include "ui_mainwindow.h"
 #include "firefighter.h"
 #include "game.h"
-#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -11,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     , missionWidget(new MissionWidget(this))
     , hubWidget(new HubWidget(this))
     , hub(new Hub(hubWidget, game->getMainCharacter(), this))
+
 {
     ui->setupUi(this);
 
@@ -52,21 +52,17 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::onNewGameClicked() {
-    qDebug() << "Starting new game";
-    game->startNewGame();
     showMissionScreen(game->getCurrentMissionDescription());
+    game->startNewGame();
     updateHeroStats();
 }
 
 void MainWindow::onLoadGameClicked() {
-    qDebug() << "Loading game";
-    game->loadGame();
+    game->loadGameFromFile();
     updateHeroStats();
-    returnToHub();
 }
 
 void MainWindow::onExitClicked() {
-    qDebug() << "Exiting game";
     close();
 }
 
@@ -77,10 +73,7 @@ void MainWindow::showMissionScreen(const QString &description) {
     setCentralWidget(missionWidget);
 }
 
-
-
 void MainWindow::showCompletionScreen() {
-    qDebug() << "Mission completed, showing completion screen";
     missionWidget->hide();
     hubWidget->showCompletionMessage("Brawo! Ukończyłeś misję i wróciłeś do miasta.");
     hubWidget->show();
@@ -88,26 +81,19 @@ void MainWindow::showCompletionScreen() {
 }
 
 void MainWindow::startNextMission() {
-    qDebug() << "Starting next mission";
     Mission* nextMission = game->getCurrentMission();
     if (nextMission) {
-        qDebug() << "Next mission description:" << nextMission->getDescription();
         showMissionScreen(nextMission->getDescription());
         nextMission->start();
         updateHeroStats();
-    } else {
-        qDebug() << "No next mission available";
     }
 }
 
 void MainWindow::connectMissionSignals(Mission* mission) {
     if (mission) {
-        qDebug() << "Connecting mission signals";
         connect(mission, &Mission::updateMissionStatus, missionWidget, &MissionWidget::setMissionDescription);
         connect(mission, &Mission::configureButton, missionWidget, &MissionWidget::configureButton);
         connect(mission, &Mission::missionCompleted, this, &MainWindow::showCompletionScreen);
-    } else {
-        qDebug() << "No mission to connect signals to";
     }
 }
 
@@ -119,7 +105,6 @@ void MainWindow::connectHeroSignals() {
 }
 
 void MainWindow::updateHeroStats() {
-    qDebug() << "Updating hero stats";
     auto firefighter = game->getMainCharacter();
     missionWidget->setHeroHealth(firefighter->getHealth());
     hubWidget->setHeroHealth(firefighter->getHealth());
@@ -138,9 +123,6 @@ void MainWindow::updateHeroStats() {
 }
 
 void MainWindow::returnToHub() {
-    qDebug() << "Returning to hub";
     hubWidget->hideConfirmationButtons();
-    missionWidget->hide();
-    hubWidget->show();
-    setCentralWidget(hubWidget);
+    hubWidget->showCompletionMessage("Brawo! Ukończyłeś misję i wróciłeś do miasta.");
 }

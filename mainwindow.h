@@ -2,20 +2,21 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "firefighter.h"
 #include "game.h"
+#include "hub.h"
 #include "hubwidget.h"
 #include "missionwidget.h"
-#include "hub.h"
 
-namespace Ui {
-class MainWindow;
-}
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -25,13 +26,12 @@ private slots:
     void showMissionScreen(const QString &description);
     void showCompletionScreen();
     void startNextMission();
+    void connectMissionSignals(Mission* mission);
+    void connectHeroSignals();
+    void updateHeroStats();
     void returnToHub();
 
 private:
-    void connectMissionSignals(Mission *mission);
-    void connectHeroSignals();
-    void updateHeroStats();
-
     Ui::MainWindow *ui;
     Game *game;
     MissionWidget *missionWidget;

@@ -23,7 +23,7 @@ private slots:
     void onButtonClicked(const QString &buttonName);
     void onBookButtonClicked(int index);
     void onShopItemButtonClicked(int index);
-    void onShopItemRightClicked(int index);
+    //void onShopItemRightClicked(int index);
 
 
 private:
