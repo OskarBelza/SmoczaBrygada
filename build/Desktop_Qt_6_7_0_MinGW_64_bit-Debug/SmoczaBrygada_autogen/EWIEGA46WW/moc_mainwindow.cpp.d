@@ -162,6 +162,7 @@ C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/QMessageBox \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
+  C:/Qt/6.7.0/mingw_64/include/QtWidgets/QStackedWidget \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/QVBoxLayout \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/QWidget \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
@@ -177,6 +178,7 @@ C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qmessagebox.h \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qsizepolicy.h \
+  C:/Qt/6.7.0/mingw_64/include/QtWidgets/qstackedwidget.h \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \

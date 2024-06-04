@@ -3,6 +3,7 @@
 Game::Game() : currentMissionIndex(0) {
     firefighter = new Firefighter("Strażak");
 
+
     missions.append(new TutorialMission(firefighter, this));
     missions.append(new SmokeDragonMission(firefighter, this));
     missions.append(new SchoolEvacuationMission(firefighter, this));

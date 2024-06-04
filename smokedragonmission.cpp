@@ -1,4 +1,5 @@
 #include "smokedragonmission.h"
+#include "QDebug"
 
 SmokeDragonMission::SmokeDragonMission(Firefighter* firefighter, QObject *parent)
     : Mission(parent), firefighter(firefighter), rescuedCivilians(0) {
@@ -14,6 +15,7 @@ void SmokeDragonMission::start() {
 }
 
 void SmokeDragonMission::handleIntroDialogue() {
+    qDebug() << "Hello";
     emit updateMissionStatus("Smok Dymny zaatakował miasto! Musisz znaleźć i uratować cywilów uwięzionych w budynkach oraz pokonać smoka. Co chcesz zrobić najpierw?");
     connectButtons("Najpierw znajdę i uratuję cywilów.", [this] { handleRescue(); },
         "Skupię się na walce ze smokiem.", [this] { handleFight(); });

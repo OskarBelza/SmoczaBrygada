@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     , missionWidget(new MissionWidget(this))
     , hubWidget(new HubWidget(this))
     , hub(new Hub(hubWidget, game->getMainCharacter(), this))
-
+    , stackedWidget(new QStackedWidget(this)) // Dodanie QStackedWidget
 {
     ui->setupUi(this);
 
@@ -29,9 +29,11 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->loadGameButton, &QPushButton::clicked, this, &MainWindow::onLoadGameClicked);
     connect(ui->exitButton, &QPushButton::clicked, this, &MainWindow::onExitClicked);
 
-    missionWidget->hide();
-    hubWidget->hide();
-    setCentralWidget(ui->centralwidget);
+    stackedWidget->addWidget(ui->centralwidget);
+    stackedWidget->addWidget(missionWidget);
+    stackedWidget->addWidget(hubWidget);
+
+    setCentralWidget(stackedWidget);
 
     connectMissionSignals(game->getCurrentMission());
     connectHeroSignals();
@@ -52,14 +54,15 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::onNewGameClicked() {
-    showMissionScreen(game->getCurrentMissionDescription());
     game->startNewGame();
     updateHeroStats();
+    showMissionScreen(game->getCurrentMissionDescription());
 }
 
 void MainWindow::onLoadGameClicked() {
     game->loadGameFromFile();
     updateHeroStats();
+    showMissionScreen(game->getCurrentMissionDescription());
 }
 
 void MainWindow::onExitClicked() {
@@ -68,22 +71,19 @@ void MainWindow::onExitClicked() {
 
 void MainWindow::showMissionScreen(const QString &description) {
     missionWidget->setMissionDescription(description);
-    missionWidget->show();
-    hubWidget->hide();
-    setCentralWidget(missionWidget);
+    stackedWidget->setCurrentWidget(missionWidget);
 }
 
 void MainWindow::showCompletionScreen() {
-    missionWidget->hide();
     hubWidget->showCompletionMessage("Brawo! Ukończyłeś misję i wróciłeś do miasta.");
-    hubWidget->show();
-    setCentralWidget(hubWidget);
+    stackedWidget->setCurrentWidget(hubWidget);
 }
 
 void MainWindow::startNextMission() {
     Mission* nextMission = game->getCurrentMission();
     if (nextMission) {
         showMissionScreen(nextMission->getDescription());
+        connectMissionSignals(nextMission);
         nextMission->start();
         updateHeroStats();
     }
@@ -125,4 +125,5 @@ void MainWindow::updateHeroStats() {
 void MainWindow::returnToHub() {
     hubWidget->hideConfirmationButtons();
     hubWidget->showCompletionMessage("Brawo! Ukończyłeś misję i wróciłeś do miasta.");
+    stackedWidget->setCurrentWidget(hubWidget);
 }

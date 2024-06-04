@@ -3,6 +3,13 @@
 Inventory::Inventory(QObject *parent) : QObject(parent) {}
 
 void Inventory::addTool(const Tools& tool) {
+    for (auto& existingTool : tools) {
+        if (existingTool.getName() == tool.getName()) {
+            existingTool.setQuantity(existingTool.getQuantity() + tool.getQuantity());
+            emit inventoryChanged();
+            return;
+        }
+    }
     tools.append(tool);
     emit inventoryChanged();
 }

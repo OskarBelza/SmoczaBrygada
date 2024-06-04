@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QStackedWidget> // Dodanie QStackedWidget
 #include "firefighter.h"
 #include "game.h"
 #include "hub.h"
@@ -37,6 +38,7 @@ private:
     MissionWidget *missionWidget;
     HubWidget *hubWidget;
     Hub *hub;
+    QStackedWidget *stackedWidget; // Dodanie QStackedWidget
 };
 
 #endif // MAINWINDOW_H
