@@ -5,6 +5,13 @@
 #include <QVector>
 #include "firefighter.h"
 #include "tutorialmission.h"
+#include "smokedragonmission.h"
+#include "schoolevacuationmission.h"
+#include "forestfiremission.h"
+#include "roadaccidentmission.h"
+#include "labattackmission.h"
+#include "citymission.h"
+#include "volcanomission.h"
 
 class Game : public QObject {
     Q_OBJECT

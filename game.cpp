@@ -3,9 +3,15 @@
 Game::Game() : currentMissionIndex(0) {
     firefighter = new Firefighter("Strażak");
 
-    // Dodajemy misje do listy misji
     missions.append(new TutorialMission(firefighter, this));
-    // Tutaj można dodać kolejne misje w przyszłości
+    missions.append(new SmokeDragonMission(firefighter, this));
+    missions.append(new SchoolEvacuationMission(firefighter, this));
+    missions.append(new ForestFireMission(firefighter, this));
+    missions.append(new RoadAccidentMission(firefighter, this));
+    missions.append(new LabAttackMission(firefighter, this));
+    missions.append(new CityMission(firefighter, this));
+    missions.append(new VolcanoMission(firefighter, this));
+
 
     connect(missions.first(), &Mission::missionCompleted, this, &Game::onMissionCompleted);
 }
@@ -17,7 +23,6 @@ void Game::startNewGame() {
 }
 
 void Game::loadGame() {
-    // Placeholder for loading game
     emit gameStateChanged("Gra załadowana");
 }
 

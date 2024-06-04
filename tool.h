@@ -5,7 +5,7 @@
 
 class Tools {
 public:
-    Tools(const QString& name, int firePower, int level = 1, int quantity = 1, const QString& description = "", bool consumable = false, bool usable = true);
+    Tools(const QString& name, int firePower, int level = 1, int quantity = 1, const QString& description = "", bool consumable = false, const int price = 100);
 
     QString getName() const;
     int getFirePower() const;
@@ -14,6 +14,7 @@ public:
     QString getDescription() const;
     bool isConsumable() const;
     bool isUsable() const;
+    int getPrice() const;
 
     void setQuantity(int quantity);
     void levelUp();
@@ -26,7 +27,7 @@ private:
     int quantity;
     QString description;
     bool consumable;
-    bool usable;
+    int price;
 
     void updateFirePower();
 };

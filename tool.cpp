@@ -1,7 +1,7 @@
 #include "tool.h"
 
-Tools::Tools(const QString& name, int firePower, int level, int quantity, const QString& description, bool consumable, bool usable)
-    : name(name), firePower(firePower), level(level), quantity(quantity), description(description), consumable(consumable), usable(usable) {}
+Tools::Tools(const QString& name, int firePower, int level, int quantity, const QString& description, bool consumable, const int price)
+    : name(name), firePower(firePower), level(level), quantity(quantity), description(description), consumable(consumable), price(price) {}
 
 QString Tools::getName() const {
     return name;
@@ -23,12 +23,12 @@ QString Tools::getDescription() const {
     return description;
 }
 
-bool Tools::isConsumable() const {
-    return consumable;
+int Tools::getPrice() const {
+    return price;
 }
 
-bool Tools::isUsable() const {
-    return usable;
+bool Tools::isConsumable() const {
+    return consumable;
 }
 
 void Tools::setQuantity(int quantity) {
@@ -53,5 +53,5 @@ bool Tools::use() {
 }
 
 void Tools::updateFirePower() {
-    firePower = firePower + (level * 10);  // Example increment strategy, can be adjusted
+    firePower = firePower + (level * 10);
 }

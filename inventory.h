@@ -12,13 +12,13 @@ public:
 
     void addTool(const Tools& tool);
     Tools* getTool(const QString& toolName);
-    QVector<Tools>& getTools();  // Return a reference to the vector of tools
+    QVector<Tools>& getTools();
 
 signals:
     void inventoryChanged();
 
 private:
-    QVector<Tools> tools;  // Use a normal QVector, not a reference
+    QVector<Tools> tools;
 };
 
 #endif // INVENTORY_H

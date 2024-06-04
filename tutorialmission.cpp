@@ -20,7 +20,7 @@ void TutorialMission::handleIntroDialogue() {
 
 void TutorialMission::handleToolsInfo() {
     emit updateMissionStatus("Otrzymałeś nowy sprzęt: Bomba wodna i Pistolet wodny.");
-    firefighter->getInventory()->addTool(Tools("Bomba wodna", 60, 1, 1, "Mocna broń przeciwko smokom", true));
+    firefighter->getInventory()->addTool(Tools("Bomba wodna", 60, 1, 2, "Mocna broń przeciwko smokom", true));
     firefighter->getInventory()->addTool(Tools("Pistolet wodny", 30, 1, 1, "Słabsza broń przeciwko smokom", false));
     connectButtons("Dalej", [this] { handleBattlefieldDescription(); });
 }

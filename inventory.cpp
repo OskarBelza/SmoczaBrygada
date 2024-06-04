@@ -17,5 +17,5 @@ Tools* Inventory::getTool(const QString& toolName) {
 }
 
 QVector<Tools>& Inventory::getTools() {
-    return tools;  // Return a reference to the tools vector
+    return tools;
 }

@@ -2,10 +2,10 @@
 
 Shop::Shop(QObject *parent) : QObject(parent) {}
 
-void Shop::addItem(const Item &item) {
-    items.append(item);
+void Shop::addTool(const Tools &tool) {
+    tools.append(tool);
 }
 
-QVector<Item> Shop::getItems() const {
-    return items;
+QVector<Tools>& Shop::getTools() {
+    return tools;
 }

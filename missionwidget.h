@@ -8,6 +8,7 @@
 #include <QHBoxLayout>
 #include <QStringList>
 #include <QMessageBox>
+#include "commonwidget.h"
 
 class MissionWidget : public QWidget {
     Q_OBJECT
@@ -15,27 +16,22 @@ public:
     explicit MissionWidget(QWidget *parent = nullptr);
 
     void setMissionDescription(const QString &description);
-    void setHeroHealth(int health);
-    void setHeroInventory(const QStringList &inventory);
     void configureButton(int buttonIndex, const QString &text, bool visible, const std::function<void()> &callback);
-    QVBoxLayout* getMainLayout(); // Dodajemy metodę do uzyskiwania głównego layoutu
+
+    void setHeroHealth(int health) { commonWidget->setHeroHealth(health); }
+    void setHeroInventory(const QStringList &inventory) { commonWidget->setHeroInventory(inventory); }
 
 signals:
     void buttonClicked(int buttonIndex);
 
 private:
     QLabel *missionDescriptionLabel;
-    QLabel *heroHealthLabel;
-    QPushButton *heroInventoryButton;
     QPushButton *buttons[3];
     QHBoxLayout *buttonLayout;
     QVBoxLayout *mainLayout;
-    QStringList inventory;
+    CommonWidget *commonWidget;
 
     void setupLayout();
-
-private slots:
-    void showInventory();
 };
 
 #endif // MISSIONWIDGET_H

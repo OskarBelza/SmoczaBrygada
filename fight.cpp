@@ -21,11 +21,11 @@ void Fight::handleTool(Tools* tool) {
 
     if (tool->use()) {
         dragon->takeDamage(tool->getFirePower());
-        emit firefighter->getInventory()->inventoryChanged();  // Emit signal after using the tool
+        emit firefighter->getInventory()->inventoryChanged();
         checkBattleOutcome();
     } else {
         emit updateFightStatus(QString("Nie masz już %1!").arg(tool->getName()));
-        connectButtonsForBattle();  // Reconnect buttons to allow another action
+        connectButtonsForBattle();
     }
 }
 
@@ -36,6 +36,7 @@ void Fight::checkBattleOutcome() {
     } else if (dragon->getHealth() <= 0) {
         emit updateFightStatus("Pokonałeś smoka!");
         firefighter->addExperience(100);
+        firefighter->heal(1000);
         emit fightEnded(true);
     } else {
         QString status = QString("Smok nadal żyje! Zdrowie smoka: %1. Wybierz kolejną akcję:").arg(dragon->getHealth());
@@ -55,19 +56,17 @@ void Fight::connectButtonsForBattle() {
     int buttonIndex = 0;
 
     for (int i = 0; i < tools.size(); ++i) {
-        if (tools[i].isUsable()) {
-            emit configureButton(buttonIndex, tools[i].getName(), true, [this, &tools, i] {
-                if (i < 0 || i >= tools.size()) {
-                    emit updateFightStatus("Error: Invalid tool index!");
-                    return;
-                }
-                handleTool(&tools[i]);
-            });
-            buttonIndex++;
-        }
+        emit configureButton(buttonIndex, tools[i].getName(), true, [this, &tools, i] {
+            if (i < 0 || i >= tools.size()) {
+                emit updateFightStatus("Error: Invalid tool index!");
+                return;
+            }
+            handleTool(&tools[i]);
+        });
+        buttonIndex++;
+
     }
 
-    // Deactivate remaining buttons if any
     for (; buttonIndex < 3; buttonIndex++) {
         emit configureButton(buttonIndex, "", false, nullptr);
     }

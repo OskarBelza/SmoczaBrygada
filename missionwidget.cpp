@@ -1,25 +1,18 @@
 #include "missionwidget.h"
+#include <QDebug>  // Dodaj qDebug
 
 MissionWidget::MissionWidget(QWidget *parent) : QWidget(parent) {
+    qDebug() << "Initializing MissionWidget";
+
     missionDescriptionLabel = new QLabel(this);
-    heroHealthLabel = new QLabel(this);
-    heroInventoryButton = new QPushButton("Show Inventory", this);
     buttonLayout = new QHBoxLayout();
     mainLayout = new QVBoxLayout(this);
+    commonWidget = new CommonWidget(this);
 
-    // Ustawienia QLabel
     missionDescriptionLabel->setFixedSize(550, 200);
     missionDescriptionLabel->setAlignment(Qt::AlignCenter);
     missionDescriptionLabel->setStyleSheet("font-size: 18px; font-weight: bold;");
-    missionDescriptionLabel->setWordWrap(true); // Włączamy zawijanie tekstu
-
-    heroHealthLabel->setFixedSize(450, 50);
-    heroHealthLabel->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    heroHealthLabel->setStyleSheet("font-size: 16px; color: red; font-weight: bold;");
-
-    heroInventoryButton->setFixedSize(100, 40);
-
-    connect(heroInventoryButton, &QPushButton::clicked, this, &MissionWidget::showInventory);
+    missionDescriptionLabel->setWordWrap(true);
 
     for (int i = 0; i < 3; ++i) {
         buttons[i] = new QPushButton(this);
@@ -33,20 +26,14 @@ MissionWidget::MissionWidget(QWidget *parent) : QWidget(parent) {
 }
 
 void MissionWidget::setMissionDescription(const QString &description) {
+    qDebug() << "Setting mission description:" << description;
     missionDescriptionLabel->setText(description);
-}
-
-void MissionWidget::setHeroHealth(int health) {
-    heroHealthLabel->setText("Health: " + QString::number(health));
-}
-
-void MissionWidget::setHeroInventory(const QStringList &inventory) {
-    this->inventory = inventory;
 }
 
 void MissionWidget::configureButton(int buttonIndex, const QString &text, bool visible, const std::function<void()> &callback) {
     if (buttonIndex < 0 || buttonIndex >= 3) return;
 
+    qDebug() << "Configuring button" << buttonIndex << "with text:" << text << "and visibility:" << visible;
     buttons[buttonIndex]->setText(text);
     buttons[buttonIndex]->setVisible(visible);
 
@@ -54,21 +41,10 @@ void MissionWidget::configureButton(int buttonIndex, const QString &text, bool v
     connect(buttons[buttonIndex], &QPushButton::clicked, this, [callback]() { callback(); });
 }
 
-QVBoxLayout* MissionWidget::getMainLayout() {
-    return mainLayout; // Dodajemy metodę zwracającą główny layout
-}
-
 void MissionWidget::setupLayout() {
-    QHBoxLayout *topLayout = new QHBoxLayout();
-    topLayout->addWidget(heroHealthLabel);
-    topLayout->addWidget(heroInventoryButton);
-
-    mainLayout->addLayout(topLayout);
+    qDebug() << "Setting up layout for MissionWidget";
+    mainLayout->addWidget(commonWidget);
     mainLayout->addWidget(missionDescriptionLabel, 0, Qt::AlignCenter);
     mainLayout->addLayout(buttonLayout);
     setLayout(mainLayout);
-}
-
-void MissionWidget::showInventory() {
-    QMessageBox::information(this, "Inventory", "Items: " + inventory.join(", "));
 }

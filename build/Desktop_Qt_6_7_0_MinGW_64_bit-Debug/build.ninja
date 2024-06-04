@@ -185,6 +185,70 @@ build CMakeFiles/SmoczaBrygada.dir/shop.cpp.obj: CXX_COMPILER__SmoczaBrygada_uns
   OBJECT_DIR = CMakeFiles\SmoczaBrygada.dir
   OBJECT_FILE_DIR = CMakeFiles\SmoczaBrygada.dir
 
+build CMakeFiles/SmoczaBrygada.dir/commonwidget.cpp.obj: CXX_COMPILER__SmoczaBrygada_unscanned_Debug C$:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/commonwidget.cpp || cmake_object_order_depends_target_SmoczaBrygada
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\SmoczaBrygada.dir\commonwidget.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/include -isystem C:/Qt/6.7.0/mingw_64/include/QtCore -isystem C:/Qt/6.7.0/mingw_64/include -isystem C:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\SmoczaBrygada.dir
+  OBJECT_FILE_DIR = CMakeFiles\SmoczaBrygada.dir
+
+build CMakeFiles/SmoczaBrygada.dir/smokedragonmission.cpp.obj: CXX_COMPILER__SmoczaBrygada_unscanned_Debug C$:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/smokedragonmission.cpp || cmake_object_order_depends_target_SmoczaBrygada
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\SmoczaBrygada.dir\smokedragonmission.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/include -isystem C:/Qt/6.7.0/mingw_64/include/QtCore -isystem C:/Qt/6.7.0/mingw_64/include -isystem C:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\SmoczaBrygada.dir
+  OBJECT_FILE_DIR = CMakeFiles\SmoczaBrygada.dir
+
+build CMakeFiles/SmoczaBrygada.dir/schoolevacuationmission.cpp.obj: CXX_COMPILER__SmoczaBrygada_unscanned_Debug C$:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/schoolevacuationmission.cpp || cmake_object_order_depends_target_SmoczaBrygada
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\SmoczaBrygada.dir\schoolevacuationmission.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/include -isystem C:/Qt/6.7.0/mingw_64/include/QtCore -isystem C:/Qt/6.7.0/mingw_64/include -isystem C:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\SmoczaBrygada.dir
+  OBJECT_FILE_DIR = CMakeFiles\SmoczaBrygada.dir
+
+build CMakeFiles/SmoczaBrygada.dir/forestfiremission.cpp.obj: CXX_COMPILER__SmoczaBrygada_unscanned_Debug C$:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/forestfiremission.cpp || cmake_object_order_depends_target_SmoczaBrygada
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\SmoczaBrygada.dir\forestfiremission.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/include -isystem C:/Qt/6.7.0/mingw_64/include/QtCore -isystem C:/Qt/6.7.0/mingw_64/include -isystem C:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\SmoczaBrygada.dir
+  OBJECT_FILE_DIR = CMakeFiles\SmoczaBrygada.dir
+
+build CMakeFiles/SmoczaBrygada.dir/roadaccidentmission.cpp.obj: CXX_COMPILER__SmoczaBrygada_unscanned_Debug C$:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/roadaccidentmission.cpp || cmake_object_order_depends_target_SmoczaBrygada
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\SmoczaBrygada.dir\roadaccidentmission.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/include -isystem C:/Qt/6.7.0/mingw_64/include/QtCore -isystem C:/Qt/6.7.0/mingw_64/include -isystem C:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\SmoczaBrygada.dir
+  OBJECT_FILE_DIR = CMakeFiles\SmoczaBrygada.dir
+
+build CMakeFiles/SmoczaBrygada.dir/labattackmission.cpp.obj: CXX_COMPILER__SmoczaBrygada_unscanned_Debug C$:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/labattackmission.cpp || cmake_object_order_depends_target_SmoczaBrygada
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\SmoczaBrygada.dir\labattackmission.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/include -isystem C:/Qt/6.7.0/mingw_64/include/QtCore -isystem C:/Qt/6.7.0/mingw_64/include -isystem C:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\SmoczaBrygada.dir
+  OBJECT_FILE_DIR = CMakeFiles\SmoczaBrygada.dir
+
+build CMakeFiles/SmoczaBrygada.dir/citymission.cpp.obj: CXX_COMPILER__SmoczaBrygada_unscanned_Debug C$:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/citymission.cpp || cmake_object_order_depends_target_SmoczaBrygada
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\SmoczaBrygada.dir\citymission.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/include -isystem C:/Qt/6.7.0/mingw_64/include/QtCore -isystem C:/Qt/6.7.0/mingw_64/include -isystem C:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\SmoczaBrygada.dir
+  OBJECT_FILE_DIR = CMakeFiles\SmoczaBrygada.dir
+
+build CMakeFiles/SmoczaBrygada.dir/volcanomission.cpp.obj: CXX_COMPILER__SmoczaBrygada_unscanned_Debug C$:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/volcanomission.cpp || cmake_object_order_depends_target_SmoczaBrygada
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\SmoczaBrygada.dir\volcanomission.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/include -isystem C:/Qt/6.7.0/mingw_64/include/QtCore -isystem C:/Qt/6.7.0/mingw_64/include -isystem C:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.0/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.0/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\SmoczaBrygada.dir
+  OBJECT_FILE_DIR = CMakeFiles\SmoczaBrygada.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target SmoczaBrygada
@@ -193,7 +257,7 @@ build CMakeFiles/SmoczaBrygada.dir/shop.cpp.obj: CXX_COMPILER__SmoczaBrygada_uns
 #############################################
 # Link the executable SmoczaBrygada.exe
 
-build SmoczaBrygada.exe: CXX_EXECUTABLE_LINKER__SmoczaBrygada_Debug CMakeFiles/SmoczaBrygada.dir/SmoczaBrygada_autogen/mocs_compilation.cpp.obj CMakeFiles/SmoczaBrygada.dir/main.cpp.obj CMakeFiles/SmoczaBrygada.dir/mainwindow.cpp.obj CMakeFiles/SmoczaBrygada.dir/dragon.cpp.obj CMakeFiles/SmoczaBrygada.dir/firefighter.cpp.obj CMakeFiles/SmoczaBrygada.dir/game.cpp.obj CMakeFiles/SmoczaBrygada.dir/hubwidget.cpp.obj CMakeFiles/SmoczaBrygada.dir/mission.cpp.obj CMakeFiles/SmoczaBrygada.dir/missionwidget.cpp.obj CMakeFiles/SmoczaBrygada.dir/tool.cpp.obj CMakeFiles/SmoczaBrygada.dir/tutorialmission.cpp.obj CMakeFiles/SmoczaBrygada.dir/inventory.cpp.obj CMakeFiles/SmoczaBrygada.dir/fight.cpp.obj CMakeFiles/SmoczaBrygada.dir/hub.cpp.obj CMakeFiles/SmoczaBrygada.dir/book.cpp.obj CMakeFiles/SmoczaBrygada.dir/archive.cpp.obj CMakeFiles/SmoczaBrygada.dir/shop.cpp.obj | C$:/Qt/6.7.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.7.0/mingw_64/lib/libQt6EntryPoint.a || SmoczaBrygada_autogen SmoczaBrygada_autogen_timestamp_deps
+build SmoczaBrygada.exe: CXX_EXECUTABLE_LINKER__SmoczaBrygada_Debug CMakeFiles/SmoczaBrygada.dir/SmoczaBrygada_autogen/mocs_compilation.cpp.obj CMakeFiles/SmoczaBrygada.dir/main.cpp.obj CMakeFiles/SmoczaBrygada.dir/mainwindow.cpp.obj CMakeFiles/SmoczaBrygada.dir/dragon.cpp.obj CMakeFiles/SmoczaBrygada.dir/firefighter.cpp.obj CMakeFiles/SmoczaBrygada.dir/game.cpp.obj CMakeFiles/SmoczaBrygada.dir/hubwidget.cpp.obj CMakeFiles/SmoczaBrygada.dir/mission.cpp.obj CMakeFiles/SmoczaBrygada.dir/missionwidget.cpp.obj CMakeFiles/SmoczaBrygada.dir/tool.cpp.obj CMakeFiles/SmoczaBrygada.dir/tutorialmission.cpp.obj CMakeFiles/SmoczaBrygada.dir/inventory.cpp.obj CMakeFiles/SmoczaBrygada.dir/fight.cpp.obj CMakeFiles/SmoczaBrygada.dir/hub.cpp.obj CMakeFiles/SmoczaBrygada.dir/book.cpp.obj CMakeFiles/SmoczaBrygada.dir/archive.cpp.obj CMakeFiles/SmoczaBrygada.dir/shop.cpp.obj CMakeFiles/SmoczaBrygada.dir/commonwidget.cpp.obj CMakeFiles/SmoczaBrygada.dir/smokedragonmission.cpp.obj CMakeFiles/SmoczaBrygada.dir/schoolevacuationmission.cpp.obj CMakeFiles/SmoczaBrygada.dir/forestfiremission.cpp.obj CMakeFiles/SmoczaBrygada.dir/roadaccidentmission.cpp.obj CMakeFiles/SmoczaBrygada.dir/labattackmission.cpp.obj CMakeFiles/SmoczaBrygada.dir/citymission.cpp.obj CMakeFiles/SmoczaBrygada.dir/volcanomission.cpp.obj | C$:/Qt/6.7.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.7.0/mingw_64/lib/libQt6EntryPoint.a || SmoczaBrygada_autogen SmoczaBrygada_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.7.0/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.7.0/mingw_64/lib/libQt6Gui.a  C:/Qt/6.7.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.7.0/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -296,7 +360,7 @@ build SmoczaBrygada_autogen/timestamp SmoczaBrygada_autogen/mocs_compilation.cpp
 #############################################
 # Phony custom command for CMakeFiles\SmoczaBrygada_autogen_timestamp_deps
 
-build CMakeFiles/SmoczaBrygada_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/SmoczaBrygada_autogen_timestamp_deps: phony C$:/Qt/6.7.0/mingw_64/./bin/uic.exe C$:/Qt/6.7.0/mingw_64/./bin/moc.exe C$:/Qt/6.7.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.7.0/mingw_64/lib/libQt6Widgets.a
+build CMakeFiles/SmoczaBrygada_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/SmoczaBrygada_autogen_timestamp_deps: phony C$:/Qt/6.7.0/mingw_64/./bin/moc.exe C$:/Qt/6.7.0/mingw_64/./bin/uic.exe C$:/Qt/6.7.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.0/mingw_64/lib/libQt6Core.a
 
 
 #############################################

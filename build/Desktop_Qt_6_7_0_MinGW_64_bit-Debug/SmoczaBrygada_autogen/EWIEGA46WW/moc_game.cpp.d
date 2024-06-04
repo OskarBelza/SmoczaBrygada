@@ -300,10 +300,17 @@ C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/citymission.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/dragon.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/fight.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/firefighter.h \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/forestfiremission.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/inventory.h \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/labattackmission.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/mission.h \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/roadaccidentmission.h \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/schoolevacuationmission.h \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/smokedragonmission.h \
   C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tool.h \
-  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tutorialmission.h
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tutorialmission.h \
+  C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/volcanomission.h

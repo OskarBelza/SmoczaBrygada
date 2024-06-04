@@ -5,11 +5,11 @@ Hub::Hub(HubWidget *hubWidget, Firefighter *firefighter, QObject *parent)
     connect(hubWidget, &HubWidget::buttonClicked, this, &Hub::onButtonClicked);
     connect(hubWidget, &HubWidget::bookButtonClicked, this, &Hub::onBookButtonClicked);
     connect(hubWidget, &HubWidget::shopItemButtonClicked, this, &Hub::onShopItemButtonClicked);
+    connect(hubWidget, &HubWidget::shopItemRightClicked, this, &Hub::onShopItemRightClicked);  // Nowy sygnał
 
-    // Dodajemy przykładowe przedmioty do sklepu
-    shop->addItem(Item("Helmet", "Protective helmet", 50.0));
-    shop->addItem(Item("Fireproof Jacket", "Protective fireproof jacket", 120.0));
-    shop->addItem(Item("Boots", "Protective boots", 80.0));
+    shop->addTool(Tools("Bomba wodna", 60, 1, 2, "Mocna broń przeciwko smokom", true, 100));
+    shop->addTool(Tools("Bomba wodna", 60, 1, 2, "Mocna broń przeciwko smokom", true, 100));
+    shop->addTool(Tools("Bomba wodna", 60, 1, 2, "Mocna broń przeciwko smokom", true, 100));
 }
 
 void Hub::onButtonClicked(const QString &buttonName) {
@@ -56,10 +56,42 @@ void Hub::onBookButtonClicked(int index) {
 }
 
 void Hub::onShopItemButtonClicked(int index) {
-    auto items = shop->getItems();
+    auto items = shop->getTools();
     if (index >= 0 && index < items.size()) {
         QString content = QString("Description: %1\nPrice: %2").arg(items[index].getDescription()).arg(items[index].getPrice());
         hubWidget->showMessageBox(items[index].getName(), content);
+    }
+}
+
+void Hub::createShopItemButtons() {
+    auto items = shop->getTools();
+    qDebug() << "Creating shop item buttons. Number of items:" << items.size();
+    hubWidget->clearShopItemButtons();
+    for (int i = 0; i < items.size(); ++i) {
+        qDebug() << "Adding shop item button:" << items[i].getName();
+        hubWidget->addShopItemButton(items[i].getName(), i);
+    }
+}
+
+void Hub::onShopItemRightClicked(int index) {
+    if (!firefighter || !hubWidget || !shop) {
+        qDebug() << "Null pointer detected!";
+        return;
+    }
+
+    auto &items = shop->getTools();
+    if (index >= 0 && index < items.size()) {
+        Tools &item = items[index];  // Use reference to the item
+        qDebug() << "Right-clicked item:" << item.getName();
+        int price = item.getPrice();
+        if (firefighter->getMoney() >= price) {
+            firefighter->buyTool(item);
+            hubWidget->showMessageBox("Zakup udany", QString("Zakupiłeś %1 za %2 złota.").arg(item.getName()).arg(price));
+        } else {
+            hubWidget->showMessageBox("Brak złota", "Nie masz wystarczającej ilości złota, aby kupić ten przedmiot.");
+        }
+    } else {
+        qDebug() << "Invalid index:" << index;
     }
 }
 
@@ -74,10 +106,3 @@ void Hub::checkArchivistAccess() {
     }
 }
 
-void Hub::createShopItemButtons() {
-    auto items = shop->getItems();
-    hubWidget->clearShopItemButtons();
-    for (int i = 0; i < items.size(); ++i) {
-        hubWidget->addShopItemButton(items[i].getName(), i);
-    }
-}

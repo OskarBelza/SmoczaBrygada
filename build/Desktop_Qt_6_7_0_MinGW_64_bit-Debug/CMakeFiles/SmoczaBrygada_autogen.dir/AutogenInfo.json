@@ -267,6 +267,18 @@
 			null
 		],
 		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/citymission.h",
+			"MU",
+			"EWIEGA46WW/moc_citymission.cpp",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/commonwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_commonwidget.cpp",
+			null
+		],
+		[
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/dragon.h",
 			"MU",
 			"EWIEGA46WW/moc_dragon.cpp",
@@ -282,6 +294,12 @@
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/firefighter.h",
 			"MU",
 			"EWIEGA46WW/moc_firefighter.cpp",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/forestfiremission.h",
+			"MU",
+			"EWIEGA46WW/moc_forestfiremission.cpp",
 			null
 		],
 		[
@@ -309,6 +327,12 @@
 			null
 		],
 		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/labattackmission.h",
+			"MU",
+			"EWIEGA46WW/moc_labattackmission.cpp",
+			null
+		],
+		[
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -327,9 +351,27 @@
 			null
 		],
 		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/roadaccidentmission.h",
+			"MU",
+			"EWIEGA46WW/moc_roadaccidentmission.cpp",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/schoolevacuationmission.h",
+			"MU",
+			"EWIEGA46WW/moc_schoolevacuationmission.cpp",
+			null
+		],
+		[
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/shop.h",
 			"MU",
 			"EWIEGA46WW/moc_shop.cpp",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/smokedragonmission.h",
+			"MU",
+			"EWIEGA46WW/moc_smokedragonmission.cpp",
 			null
 		],
 		[
@@ -342,6 +384,12 @@
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tutorialmission.h",
 			"MU",
 			"EWIEGA46WW/moc_tutorialmission.cpp",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/volcanomission.h",
+			"MU",
+			"EWIEGA46WW/moc_volcanomission.cpp",
 			null
 		]
 	],
@@ -427,6 +475,16 @@
 			null
 		],
 		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/citymission.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/commonwidget.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/dragon.cpp",
 			"MU",
 			null
@@ -438,6 +496,11 @@
 		],
 		[
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/firefighter.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/forestfiremission.cpp",
 			"MU",
 			null
 		],
@@ -454,6 +517,11 @@
 		],
 		[
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/inventory.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/labattackmission.cpp",
 			"MU",
 			null
 		],
@@ -478,7 +546,22 @@
 			null
 		],
 		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/roadaccidentmission.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/schoolevacuationmission.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/shop.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/smokedragonmission.cpp",
 			"MU",
 			null
 		],
@@ -489,6 +572,11 @@
 		],
 		[
 			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tutorialmission.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/volcanomission.cpp",
 			"MU",
 			null
 		]

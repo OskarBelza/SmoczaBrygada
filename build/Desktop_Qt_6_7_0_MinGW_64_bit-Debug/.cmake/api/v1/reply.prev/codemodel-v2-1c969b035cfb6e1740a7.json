@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-f88d48a4a03e4629bea8.json",
+					"jsonFile" : "directory-.-Debug-233120258b4258b0aacb.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "SmoczaBrygada::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SmoczaBrygada-Debug-2d028306fd3ddeee2064.json",
+					"jsonFile" : "target-SmoczaBrygada-Debug-d0110e21471b3e487149.json",
 					"name" : "SmoczaBrygada",
 					"projectIndex" : 0
 				},

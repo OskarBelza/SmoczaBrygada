@@ -1,6 +1,10 @@
 SmoczaBrygada_autogen/timestamp: \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/QList \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/QMap \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/QObject \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/QRect \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/QSize \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/QSizeF \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/QString \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/QStringList \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/QVector \
@@ -33,10 +37,16 @@ SmoczaBrygada_autogen/timestamp: \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qcontainerinfo.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qcontainertools_impl.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qcontiguouscache.h \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/qcoreapplication.h \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/qcoreevent.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qdarwinhelpers.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qdatastream.h \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/qdeadlinetimer.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qdebug.h \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/qelapsedtimer.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qendian.h \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/qeventloop.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qexceptionhandling.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qflags.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qfloat16.h \
@@ -55,6 +65,7 @@ SmoczaBrygada_autogen/timestamp: \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qlatin1stringview.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qline.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qlist.h \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/qlocale.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qlogging.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qmalloc.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qmap.h \
@@ -64,6 +75,7 @@ SmoczaBrygada_autogen/timestamp: \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qmetatype.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qminmax.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qnamespace.h \
+	C:/Qt/6.7.0/mingw_64/include/QtCore/qnativeinterface.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qnumeric.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qobject.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qobject_impl.h \
@@ -124,31 +136,44 @@ SmoczaBrygada_autogen/timestamp: \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qversiontagging.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qxptype_traits.h \
 	C:/Qt/6.7.0/mingw_64/include/QtCore/qyieldcpu.h \
+	C:/Qt/6.7.0/mingw_64/include/QtGui/QMouseEvent \
+	C:/Qt/6.7.0/mingw_64/include/QtGui/QTransform \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qaction.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qbitmap.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qbrush.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qcolor.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qcursor.h \
+	C:/Qt/6.7.0/mingw_64/include/QtGui/qevent.h \
+	C:/Qt/6.7.0/mingw_64/include/QtGui/qeventpoint.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qfont.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qfontinfo.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qfontmetrics.h \
+	C:/Qt/6.7.0/mingw_64/include/QtGui/qguiapplication.h \
+	C:/Qt/6.7.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qicon.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qimage.h \
+	C:/Qt/6.7.0/mingw_64/include/QtGui/qinputdevice.h \
+	C:/Qt/6.7.0/mingw_64/include/QtGui/qinputmethod.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qkeysequence.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qpaintdevice.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qpalette.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qpicture.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qpixelformat.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qpixmap.h \
+	C:/Qt/6.7.0/mingw_64/include/QtGui/qpointingdevice.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qpolygon.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qregion.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qrgb.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qrgba64.h \
+	C:/Qt/6.7.0/mingw_64/include/QtGui/qscreen.h \
+	C:/Qt/6.7.0/mingw_64/include/QtGui/qscreen_platform.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qtextdocument.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qtgui-config.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qtguiexports.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qtguiglobal.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qtransform.h \
+	C:/Qt/6.7.0/mingw_64/include/QtGui/qvector2d.h \
+	C:/Qt/6.7.0/mingw_64/include/QtGui/qvectornd.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs.h \
 	C:/Qt/6.7.0/mingw_64/include/QtGui/qwindowdefs_win.h \
 	C:/Qt/6.7.0/mingw_64/include/QtWidgets/QGridLayout \
@@ -553,12 +578,18 @@ SmoczaBrygada_autogen/timestamp: \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeRCCompiler.cmake \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeSystem.cmake \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/SmoczaBrygada_autogen/moc_predefs.h \
+	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/citymission.cpp \
+	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/citymission.h \
+	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/commonwidget.cpp \
+	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/commonwidget.h \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/dragon.cpp \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/dragon.h \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/fight.cpp \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/fight.h \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/firefighter.cpp \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/firefighter.h \
+	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/forestfiremission.cpp \
+	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/forestfiremission.h \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/game.cpp \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/game.h \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/hub.cpp \
@@ -567,6 +598,8 @@ SmoczaBrygada_autogen/timestamp: \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/hubwidget.h \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/inventory.cpp \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/inventory.h \
+	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/labattackmission.cpp \
+	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/labattackmission.h \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/main.cpp \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/mainwindow.cpp \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/mainwindow.h \
@@ -574,11 +607,19 @@ SmoczaBrygada_autogen/timestamp: \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/mission.h \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/missionwidget.cpp \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/missionwidget.h \
+	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/roadaccidentmission.cpp \
+	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/roadaccidentmission.h \
+	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/schoolevacuationmission.cpp \
+	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/schoolevacuationmission.h \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/shop.cpp \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/shop.h \
+	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/smokedragonmission.cpp \
+	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/smokedragonmission.h \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tool.cpp \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tool.h \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tutorialmission.cpp \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/tutorialmission.h \
+	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/volcanomission.cpp \
+	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/volcanomission.h \
 	C:/Users/oskar/OneDrive/Dokumenty/SmoczaBrygada/mainwindow.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe
