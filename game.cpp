@@ -1,4 +1,5 @@
 #include "game.h"
+#include <QDebug>
 
 Game::Game() : currentMissionIndex(0) {
     firefighter = new Firefighter("Strażak");

@@ -21,6 +21,8 @@ public:
 
     void setHeroHealth(int health) { commonWidget->setHeroHealth(health); }
     void setHeroInventory(const QStringList &inventory) { commonWidget->setHeroInventory(inventory); }
+    void setHeroGold(int gold) { commonWidget->setHeroGold(gold); }
+    void setHeroExperience(int experience) { commonWidget->setHeroExperience(experience); }
 
 signals:
     void buttonClicked(int buttonIndex);

@@ -31,6 +31,7 @@ private slots:
     void connectHeroSignals();
     void updateHeroStats();
     void returnToHub();
+    void saveGame();
 
 private:
     Ui::MainWindow *ui;

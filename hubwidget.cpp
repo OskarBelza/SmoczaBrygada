@@ -37,8 +37,10 @@ HubWidget::HubWidget(QWidget *parent) : QWidget(parent), commonWidget(new Common
     createButton("nextMissionButton", "Rozpocznij kolejną misję");
     createButton("returnButton", "Wróć");
     createButton("showArchivesButton", "Pokaż archiwum");
+    createButton("saveGameButton", "Zapisz grę");
 
     buttons["nextMissionButton"]->hide();
+    buttons["saveGameButton"]->hide();
     buttons["returnButton"]->hide();
     buttons["showArchivesButton"]->hide();
 }
@@ -69,6 +71,8 @@ void HubWidget::showInsufficientLevelMessage(const QString &message) {
     setButtonVisibility("returnButton", true);
     setButtonVisibility("showArchivesButton", false);
     setButtonVisibility("nextMissionButton", false);
+    setButtonVisibility("saveGameButton", false);
+
 }
 
 void HubWidget::showArchivistOptions() {
@@ -77,6 +81,8 @@ void HubWidget::showArchivistOptions() {
     setButtonVisibility("returnButton", true);
     setButtonVisibility("showArchivesButton", true);
     setButtonVisibility("nextMissionButton", false);
+    setButtonVisibility("saveGameButton", false);
+
 }
 
 void HubWidget::showConfirmationButtons() {
@@ -85,6 +91,8 @@ void HubWidget::showConfirmationButtons() {
     setButtonVisibility("captainButton", false);
     setButtonVisibility("shopkeeperButton", false);
     setButtonVisibility("archivistButton", false);
+    setButtonVisibility("saveGameButton", true);
+
 }
 
 void HubWidget::hideConfirmationButtons() {
@@ -93,6 +101,8 @@ void HubWidget::hideConfirmationButtons() {
     setButtonVisibility("captainButton", true);
     setButtonVisibility("shopkeeperButton", true);
     setButtonVisibility("archivistButton", true);
+    setButtonVisibility("saveGameButton", false);
+
 }
 
 void HubWidget::setButtonVisibility(const QString &buttonName, bool visible) {

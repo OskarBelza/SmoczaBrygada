@@ -7,6 +7,7 @@
 #include <QStringList>
 #include <QMessageBox>
 #include <QHBoxLayout>
+#include <QVBoxLayout>
 
 class CommonWidget : public QWidget {
     Q_OBJECT
@@ -15,14 +16,20 @@ public:
 
     void setHeroHealth(int health);
     void setHeroInventory(const QStringList &inventory);
+    void setHeroGold(int gold);
+    void setHeroExperience(int experience);
 
 private slots:
     void showInventory();
 
 private:
     QLabel *heroHealthLabel;
+    QLabel *heroGoldLabel;
+    QLabel *heroExperienceLabel;
     QPushButton *heroInventoryButton;
     QStringList inventory;
+    int gold;
+    int experience;
 };
 
 #endif // COMMONWIDGET_H

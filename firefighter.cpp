@@ -1,7 +1,7 @@
 #include "firefighter.h"
 
 Firefighter::Firefighter(const QString& name, QObject *parent)
-    : QObject(parent), name(name), health(100), experiencePoints(0), lvl(5), inventory(new Inventory(this)), money(100), maxHealth(100) {}
+    : QObject(parent), name(name), health(100), experiencePoints(90), lvl(1), inventory(new Inventory(this)), money(100), maxHealth(100) {}
 
 QString Firefighter::getName() const { return name; }
 int Firefighter::getHealth() const { return health; }
@@ -20,6 +20,7 @@ void Firefighter::addExperience(int points) {
     while (experiencePoints >= 100) {
         experiencePoints -= 100;
         lvl++;
+        emit experienceChanged(experiencePoints);
         emit levelUp(lvl);
     }
 }
@@ -30,12 +31,6 @@ void Firefighter::addMoney(int extraMoney) {
 }
 
 Inventory* Firefighter::getInventory() { return inventory; }
-
-void Firefighter::buyTool(Tools &tool) {
-    inventory->addTool(tool);
-    money -= tool.getPrice();
-    emit moneyChanged(money);
-}
 
 void Firefighter::heal(int heal) {
     if (heal + health >= maxHealth) {
@@ -49,7 +44,7 @@ void Firefighter::heal(int heal) {
 void Firefighter::setName(const QString& newName) { name = newName; }
 void Firefighter::setHealth(int newHealth) {
     health = newHealth;
-    emit healthChanged(health);
+    emit healthChanged(newHealth);
 }
 void Firefighter::setExperiencePoints(int points) {
     experiencePoints = points;

@@ -37,6 +37,7 @@ private:
 
 private slots:
     void onMissionCompleted();
+
 };
 
 #endif // GAME_H

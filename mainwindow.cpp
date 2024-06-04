@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     , missionWidget(new MissionWidget(this))
     , hubWidget(new HubWidget(this))
     , hub(new Hub(hubWidget, game->getMainCharacter(), this))
-    , stackedWidget(new QStackedWidget(this)) // Dodanie QStackedWidget
+    , stackedWidget(new QStackedWidget(this))
 {
     ui->setupUi(this);
 
@@ -43,6 +43,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(game, &Game::missionCompleted, this, &MainWindow::showCompletionScreen);
     connect(hub, &Hub::startNextMission, this, &MainWindow::startNextMission);
     connect(hub, &Hub::showHub, this, &MainWindow::returnToHub);
+    connect(hub, &Hub::saveGame, this, &MainWindow::saveGame);
 }
 
 MainWindow::~MainWindow() {
@@ -51,6 +52,11 @@ MainWindow::~MainWindow() {
     delete missionWidget;
     delete hubWidget;
     delete hub;
+}
+
+void MainWindow::saveGame() {
+    game->saveGame();
+    stackedWidget->setCurrentWidget(ui->centralwidget);
 }
 
 void MainWindow::onNewGameClicked() {
@@ -62,7 +68,7 @@ void MainWindow::onNewGameClicked() {
 void MainWindow::onLoadGameClicked() {
     game->loadGameFromFile();
     updateHeroStats();
-    showMissionScreen(game->getCurrentMissionDescription());
+    returnToHub();
 }
 
 void MainWindow::onExitClicked() {
@@ -101,6 +107,10 @@ void MainWindow::connectHeroSignals() {
     auto firefighter = game->getMainCharacter();
     connect(firefighter, &Firefighter::healthChanged, missionWidget, &MissionWidget::setHeroHealth);
     connect(firefighter, &Firefighter::healthChanged, hubWidget, &HubWidget::setHeroHealth);
+    connect(firefighter, &Firefighter::experienceChanged, missionWidget, &MissionWidget::setHeroExperience);
+    connect(firefighter, &Firefighter::experienceChanged, hubWidget, &HubWidget::setHeroExperience);
+    connect(firefighter, &Firefighter::moneyChanged, missionWidget, &MissionWidget::setHeroGold);
+    connect(firefighter, &Firefighter::moneyChanged, hubWidget, &HubWidget::setHeroGold);
     connect(firefighter->getInventory(), &Inventory::inventoryChanged, this, &MainWindow::updateHeroStats);
 }
 
@@ -120,6 +130,12 @@ void MainWindow::updateHeroStats() {
     }
     missionWidget->setHeroInventory(inventory);
     hubWidget->setHeroInventory(inventory);
+
+    missionWidget->setHeroGold(firefighter->getMoney());
+    hubWidget->setHeroGold(firefighter->getMoney());
+
+    missionWidget->setHeroExperience(firefighter->getExperiencePoints());
+    hubWidget->setHeroExperience(firefighter->getExperiencePoints());
 }
 
 void MainWindow::returnToHub() {

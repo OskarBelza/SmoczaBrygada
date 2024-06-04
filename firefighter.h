@@ -22,7 +22,6 @@ public:
     void addExperience(int points);
     void addMoney(int extraMoney);
     Inventory* getInventory();
-    void buyTool(Tools &tool);
     void heal(int heal);
 
     void setName(const QString& name);

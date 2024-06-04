@@ -9,3 +9,9 @@ void Shop::addTool(const Tools &tool) {
 QVector<Tools>& Shop::getTools() {
     return tools;
 }
+
+void Shop::removeTool(int index) {
+    if (index >= 0 && index < tools.size()) {
+        tools.removeAt(index);
+    }
+}

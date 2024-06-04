@@ -6,9 +6,9 @@ Hub::Hub(HubWidget *hubWidget, Firefighter *firefighter, QObject *parent)
     connect(hubWidget, &HubWidget::bookButtonClicked, this, &Hub::onBookButtonClicked);
     connect(hubWidget, &HubWidget::shopItemButtonClicked, this, &Hub::onShopItemButtonClicked);
 
-    shop->addTool(Tools("Bomba wodna", 60, 1, 2, "Mocna broń przeciwko smokom", true, 100));
-    shop->addTool(Tools("Bomba wodna", 60, 1, 2, "Mocna broń przeciwko smokom", true, 100));
-    shop->addTool(Tools("Bomba wodna", 60, 1, 2, "Mocna broń przeciwko smokom", true, 100));
+    shop->addTool(Tools("Bomba wodna", 60, 1, 1, "Mocna broń przeciwko smokom", true, 100));
+    shop->addTool(Tools("Bomba wodna", 60, 1, 1, "Mocna broń przeciwko smokom", true, 100));
+    shop->addTool(Tools("Bomba wodna", 60, 1, 1, "Mocna broń przeciwko smokom", true, 100));
 }
 
 void Hub::onButtonClicked(const QString &buttonName) {
@@ -44,6 +44,8 @@ void Hub::onButtonClicked(const QString &buttonName) {
         }
         hubWidget->setButtonVisibility("showArchivesButton", false);
         hubWidget->setButtonVisibility("returnButton", true);
+    } else if (buttonName == "saveGameButton") {
+        emit saveGame();
     }
 }
 
@@ -54,8 +56,6 @@ void Hub::onBookButtonClicked(int index) {
     }
 }
 
-#include "hub.h"
-
 void Hub::onShopItemButtonClicked(int index) {
     auto items = shop->getTools();
     if (index >= 0 && index < items.size()) {
@@ -65,13 +65,21 @@ void Hub::onShopItemButtonClicked(int index) {
         if (playerMoney >= itemPrice) {
             firefighter->setMoney(playerMoney - itemPrice);
             firefighter->getInventory()->addTool(items[index]);
+
+            // Usuń przedmiot ze sklepu
+            shop->removeTool(index);
+
             QString successMessage = QString("Pomyślnie zakupiono: %1").arg(items[index].getName());
             hubWidget->showMessageBox("Zakup udany", successMessage);
+
+            // Odśwież przyciski przedmiotów w sklepie
+            createShopItemButtons();
         } else {
             hubWidget->showMessageBox("Za mało pieniędzy", "Nie masz wystarczająco dużo pieniędzy, aby kupić ten przedmiot.");
         }
     }
 }
+
 
 void Hub::createShopItemButtons() {
     auto items = shop->getTools();

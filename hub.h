@@ -14,6 +14,7 @@ public:
 
 signals:
     void startNextMission();
+    void saveGame();
     void showCaptain();
     void showShopkeeper();
     void showArchivist();

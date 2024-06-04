@@ -11,6 +11,8 @@ public:
     explicit Shop(QObject *parent = nullptr);
     void addTool(const Tools &tool);
     QVector<Tools>& getTools();
+    void removeTool(int index);
+
 
 private:
     QVector<Tools> tools;
