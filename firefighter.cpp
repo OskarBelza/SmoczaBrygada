@@ -1,13 +1,14 @@
 #include "firefighter.h"
 
 Firefighter::Firefighter(const QString& name, QObject *parent)
-    : QObject(parent), name(name), health(100), experiencePoints(90), lvl(1), inventory(new Inventory(this)), money(100), maxHealth(100) {}
+    : QObject(parent), name(name), health(100), experiencePoints(90), lvl(1), inventory(new Inventory(this)), money(100), maxHealth(100), rescued(0) {}
 
 QString Firefighter::getName() const { return name; }
 int Firefighter::getHealth() const { return health; }
 int Firefighter::getExperiencePoints() const { return experiencePoints; }
 int Firefighter::getLevel() const { return lvl; }
 int Firefighter::getMoney() const { return money; }
+
 
 void Firefighter::takeDamage(int damage) {
     health -= damage;
@@ -59,6 +60,10 @@ void Firefighter::setMoney(int newMoney) {
     emit moneyChanged(newMoney);
 }
 
+void Firefighter::addRescued(int newRescued) {
+    rescued += newRescued;
+}
+
 QDataStream& operator<<(QDataStream& out, const Firefighter& firefighter) {
     out << firefighter.name;
     out << firefighter.health;
@@ -66,6 +71,7 @@ QDataStream& operator<<(QDataStream& out, const Firefighter& firefighter) {
     out << firefighter.lvl;
     out << firefighter.money;
     out << *firefighter.inventory;
+    out << firefighter.rescued;
     return out;
 }
 
@@ -76,5 +82,6 @@ QDataStream& operator>>(QDataStream& in, Firefighter& firefighter) {
     in >> firefighter.lvl;
     in >> firefighter.money;
     in >> *firefighter.inventory;
+    in << firefighter.rescued;
     return in;
 }

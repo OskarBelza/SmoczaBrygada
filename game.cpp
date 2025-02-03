@@ -64,9 +64,16 @@ Firefighter* Game::getMainCharacter() const {
 
 void Game::onMissionCompleted() {
     currentMissionIndex++;
+
     if (currentMissionIndex < missions.size()) {
-        emit missionCompleted();
+        qDebug() << "Rozpoczynam nową misję: " << currentMissionIndex;
+        Mission* nextMission = getCurrentMission();
+        if (nextMission) {
+            connect(nextMission, &Mission::missionCompleted, this, &Game::onMissionCompleted);
+            nextMission->start();
+        }
     } else {
         emit enterHub();
     }
 }
+

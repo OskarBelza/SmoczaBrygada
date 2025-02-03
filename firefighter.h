@@ -29,6 +29,7 @@ public:
     void setExperiencePoints(int points);
     void setLevel(int level);
     void setMoney(int money);
+    void addRescued(int rescued);
 
     friend QDataStream& operator<<(QDataStream& out, const Firefighter& firefighter);
     friend QDataStream& operator>>(QDataStream& in, Firefighter& firefighter);
@@ -47,6 +48,7 @@ private:
     Inventory *inventory;
     int money;
     int maxHealth;
+    int rescued;
 };
 
 #endif // FIREFIGHTER_H

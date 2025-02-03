@@ -57,7 +57,7 @@ void SmokeDragonMission::handleFightEnded(bool won) {
 void SmokeDragonMission::handleMissionOutcome() {
     emit updateMissionStatus("Misja zakończona sukcesem! Otrzymałeś maski przeciwgazowe jako nagrodę.");
     firefighter->getInventory()->addTool(Tools("Maska przeciwgazowa", 0, 1, 0, "Chroni przed dymem", true));
-    emit missionCompleted();
+    connectButtons("Dalej", [this] {emit missionCompleted();});
 }
 
 void SmokeDragonMission::connectButtons(const QString& button0Text, std::function<void()> button0Handler,
