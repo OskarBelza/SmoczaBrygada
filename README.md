@@ -70,7 +70,8 @@ Developers can extend the game by:
 - Implementing **story-driven mechanics**, allowing the player’s actions to have long-term consequences.
 
 ## **Presentation**  
-![Application Preview](app_preview.png)
+![Application Preview](app1.png)
+![Application Preview](app2.png)
 
 ##  Contribute to the Project
 If you have ideas for new mechanics or want to improve the game, feel free to **fork the repository** and submit your changes. 
