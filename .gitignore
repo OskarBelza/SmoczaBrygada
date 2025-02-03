@@ -1,1 +1,55 @@
+<<<<<<< HEAD
 "# Qt Project GitIgnore" 
+=======
+# Pliki kompilacji i binarki
+build-*/
+*.o
+*.obj
+*.so
+*.a
+*.lib
+*.dll
+*.dylib
+*.exe
+*.app
+*.out
+
+# Pliki generowane przez Qt Creator
+*.pro.user
+*.pro.user.*
+*.qmake.stash
+
+# Katalogi build i cache
+/build*/
+cmake-build-*/
+
+# Pliki Makefile, Ninja, CMake
+Makefile
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles/
+*.moc
+*.qrc
+*.rcc
+*.qch
+*.qhc
+*.qmlc
+*.qtd
+
+# Pliki logów i sesji
+*.log
+*.session
+*.session.lock
+
+# Pliki systemowe
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Pliki backupowe i edytorów
+*~
+*.swp
+*.bak
+*.orig
+*.rej
+>>>>>>> 77b59fe6043a436a353e257b14dee89aa8162bc1
